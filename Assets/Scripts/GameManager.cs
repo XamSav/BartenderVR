@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("Puntuacion")]
     private byte _score = 0;
     private byte _reputation = 100;
+    private int playerMoney = 100;
     [Header("Tiempo")]
     [SerializeField] private int _maxTime = 100;
     private float _currentTime = 0;
@@ -67,6 +68,10 @@ public class GameManager : MonoBehaviour
     public float GetTime()
     {
         return _currentTime;
+    }
+    public int GetPlayerMoney()
+    {
+        return playerMoney;
     }
 
     [System.Serializable]
