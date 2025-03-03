@@ -1,0 +1,34 @@
+{
+    "name": "XRInputs",
+    "maps": [
+        {
+            "name": "XRMap",
+            "id": "245d2442-6bef-4a62-a0e9-1687825fc0a1",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "4bd2548b-6236-4e65-a5bf-dd9aa1e3984b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "34cbdf6b-8fa7-4747-860f-f67a351b06d7",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
