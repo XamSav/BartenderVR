@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
     //Movimiento
     public Transform targetPosition; // Posición de la barra
+    public Vector3 spawnPosition; // Posición de la barra
     public float moveSpeed = 2f; // Velocidad de movimiento
     //Nube
     public SpriteRenderer thoughtBubble; // Burbuja de pensamiento
@@ -15,22 +17,23 @@ public class Customer : MonoBehaviour
     public DeliveryZone delivery;
     [SerializeField]private float patienceTime = 20f; // Tiempo antes de irse
     private byte indexPos;
-    private bool isWaiting = true;
+    private bool isWaiting = false;
+    private bool isLeaving = false;
+    private NavMeshAgent navMeshAgent;
 
     void Start()
     {
-        StartCoroutine(MoveToBar());
+        spawnPosition = transform.position;
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.destination = targetPosition.position;
     }
-    IEnumerator MoveToBar()
+    private void Update()
     {
-        while (Vector3.Distance(transform.position, targetPosition.position) > 0.1f)
+        Debug.Log(Vector3.Distance(transform.position, targetPosition.position) < 0.1f);
+        if(Vector3.Distance(transform.position, targetPosition.position) < 0.1f && !isWaiting && !isLeaving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, moveSpeed * Time.deltaTime);
-            yield return null; // Esperar al siguiente frame
+            StartCoroutine(WaitForDrink());
         }
-
-        // Llego a la barra, inicia la espera
-        StartCoroutine(WaitForDrink());
     }
     public void SetOrder(CocktailRecipe cocktail)
     {
@@ -66,6 +69,7 @@ public class Customer : MonoBehaviour
             case 2: Debug.Log("Ingredientes Incorrectos");
                 break;
             case 3:
+                GameManager.instance.ClientPay(100);
                 Debug.Log("Coctel Bien Hecho");
                 break;
         }
@@ -80,16 +84,19 @@ public class Customer : MonoBehaviour
             Leave(false);
         }
     }
+    
     public void SetIndexPos(byte index)
     {
         indexPos = index;
     }
     void Leave(bool happy)
     {
+        isLeaving = true;
         isWaiting = false;
+        navMeshAgent.destination = spawnPosition;
         thoughtBubble.gameObject.SetActive(false);
         Debug.Log(happy ? "El cliente se va feliz." : "El cliente se va molesto.");
         GameManager.instance.CustomerLeave(indexPos);
-        Destroy(gameObject, 2f); // Destruir el cliente después de 2 segundos
+        Destroy(gameObject, 5f); // Destruir el cliente después de 2 segundos
     }
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cocktailName: GinLemon
   cocktailImage: {fileID: 0}
+  price: 7
   ingredients:
   - ingredientName: Limon
     amount: 100

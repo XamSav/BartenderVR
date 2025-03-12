@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36846cef9fc5c9c4083a62f13a4253b5, type: 3}
   m_Name: Silla
   m_EditorClassIdentifier: 
-  item: 0
   cost: 100
   upgradedPrefab:
-  - {fileID: 3184386871972330406, guid: 05a94f91855e99b4b908fd441fbab382, type: 3}
-  - {fileID: 1762585235815117532, guid: df6ed9d010f36f645b4d4b41620b1638, type: 3}
-  - {fileID: 9021516065055101047, guid: 60cf567c8f1259548b252e4962256ebc, type: 3}
+  - {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
+  - {fileID: 2094465940939050539, guid: df6ed9d010f36f645b4d4b41620b1638, type: 3}
+  - {fileID: 6934317031472416742, guid: 638540e351da5ce44a4cdb519e0aa04c, type: 3}

@@ -73,7 +73,10 @@ public class GameManager : MonoBehaviour
     {
         return playerMoney;
     }
-
+    public void ClientPay(int money)
+    {
+        playerMoney += money;
+    }
     [System.Serializable]
     public class Card
     {

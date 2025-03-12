@@ -19,6 +19,7 @@ public class CocktailRecipe : ScriptableObject
 
     public string cocktailName;
     public Sprite cocktailImage;
+    public int price;
     public List<Ingredient> ingredients = new List<Ingredient>();
     public List<Decorations> decorations = new List<Decorations>();
 }

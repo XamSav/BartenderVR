@@ -31,7 +31,7 @@ public class GlassContent : MonoBehaviour
     {
         if (currentVolume + amount > maxCapacity)
         {
-            Debug.Log("�El vaso est� lleno!");
+            Debug.Log("El vaso esta lleno!");
             return;
         }
 
@@ -54,7 +54,7 @@ public class GlassContent : MonoBehaviour
         }
 
         currentVolume += amount;
-        Debug.Log($"A�adido {amount:F2}ml de {ingredient}. Total: {currentVolume:F2}ml");
+        Debug.Log($"Añadido {amount:F2}ml de {ingredient}. Total: {currentVolume:F2}ml");
         //GameManager.instance.AddLiquid(ingredient, amount);
     }
     public float GetCurrentVolume()

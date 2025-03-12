@@ -9,8 +9,7 @@ public class UpgradeManager : MonoBehaviour
     public Transform _sillasParent;
     public Transform _mesasParent;
     public Transform _lamparasParent;
-    private int playerMoney = 200;//150 de prueba
-
+    private int playerMoney;
     void Awake() { 
         if(instance != null && instance != this)
         {
@@ -21,12 +20,15 @@ public class UpgradeManager : MonoBehaviour
 
     public void Upgrade(byte item)
     {
+        playerMoney = GameManager.instance.GetPlayerMoney();
         if (lvls[item] < 2)
         {
             if (playerMoney >= upgradeDatas[item].cost)
             {
+                Debug.Log("Dinero: " + playerMoney);
                 playerMoney -= upgradeDatas[item].cost;
                 lvls[item]++;
+                Debug.Log("Dinero - Gasto: " + playerMoney);
                 Debug.Log("Level Var: " + lvls[item]);
                 UpgradeItems(_sillasParent, item);
             }
