@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36846cef9fc5c9c4083a62f13a4253b5, type: 3}
-  m_Name: Silla_2
+  m_Name: Lampara
   m_EditorClassIdentifier: 
-  upgradeName: Silla_2
-  cost: 0
-  upgradedPrefab: {fileID: 0}
+  item: 1
+  cost: 100
+  upgradedPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

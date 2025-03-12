@@ -8,12 +8,20 @@ public class DeliveryZone : MonoBehaviour
     {
         if (col.CompareTag("Drink"))
         {
-            cocktail = col.GetComponent<GlassReceiver>();
-            Debug.Log(cocktail.ingredients);
-            if (waitingCustomer != null)
+            try
             {
-                waitingCustomer.ReceiveDrink(cocktail);
-                col.gameObject.SetActive(false); // Desactivar el cóctel 
+                cocktail = col.GetComponent<GlassReceiver>();
+                if (cocktail.ingredients.Count > 0)
+                {
+                    if (waitingCustomer != null)
+                    {
+                        waitingCustomer.ReceiveDrink(cocktail);
+                        col.gameObject.SetActive(false); // Desactivar el cóctel 
+                    }
+                }
+            }
+            catch {
+                Debug.Log("Error GlassReceiver");
             }
         }
     }

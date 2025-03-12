@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36846cef9fc5c9c4083a62f13a4253b5, type: 3}
-  m_Name: Silla_1
+  m_Name: Mesa
   m_EditorClassIdentifier: 
-  upgradeName: Silla_1
-  cost: 0
-  upgradedPrefab: {fileID: 0}
+  cost: 100
+  upgradedPrefab:
+  - {fileID: 3184386871972330406, guid: d02ccecbbfd498b48b4780a0a5558964, type: 3}
+  - {fileID: 1762585235815117532, guid: 69114824779aa8a45b1529cc4290a403, type: 3}
+  - {fileID: 9021516065055101047, guid: 6822eca6b307a9e4b92368fb9c16af15, type: 3}

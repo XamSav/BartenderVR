@@ -11,7 +11,7 @@ public class GlassReceiver : MonoBehaviour
     }
 
     public List<IngredientsData> ingredients = new List<IngredientsData>(); // Lista de ingredientes en el vaso
-    public float maxCapacity = 300f; // Capacidad máxima en ml
+    public float maxCapacity = 300f; // Capacidad mï¿½xima en ml
     private float currentVolume = 0f;
 
     private void OnCollisionEnter(Collision other)
@@ -35,7 +35,7 @@ public class GlassReceiver : MonoBehaviour
 
         if (afterTransfer <= 0)
         {
-            Debug.Log("El vaso receptor está lleno o no hay líquido que verter.");
+            Debug.Log("El vaso receptor estï¿½ lleno o no hay lï¿½quido que verter.");
             return;
         }
 

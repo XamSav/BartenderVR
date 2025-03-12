@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
+    private byte[] lvls = new byte[3] { 0, 0, 0 };
     public static UpgradeManager instance;
-    private int playerMoney;//100 de prueba
+    public UpgradeData[] upgradeDatas = new UpgradeData[3];
+    public Transform _sillasParent;
+    public Transform _mesasParent;
+    public Transform _lamparasParent;
+    private int playerMoney = 200;//150 de prueba
 
     void Awake() { 
         if(instance != null && instance != this)
@@ -13,17 +19,41 @@ public class UpgradeManager : MonoBehaviour
         instance = this; 
     }
 
-    public bool TryUpgrade(UpgradeableObject upgradeable)
+    public void Upgrade(byte item)
     {
-        if (!upgradeable.CanUpgrade()) return false;
-        playerMoney = GameManager.instance.GetPlayerMoney();
-        int cost = upgradeable.GetUpgradeCost();
-        if (playerMoney >= cost)
+        if (lvls[item] < 2)
         {
-            playerMoney -= cost;
-            upgradeable.Upgrade();
-            return true;
+            if (playerMoney >= upgradeDatas[item].cost)
+            {
+                playerMoney -= upgradeDatas[item].cost;
+                lvls[item]++;
+                Debug.Log("Level Var: " + lvls[item]);
+                UpgradeItems(_sillasParent, item);
+            }
+            else
+            {
+                Debug.Log("No tienes dinero");
+            }
         }
-        return false;
+    }
+
+    private void UpgradeItems(Transform parent, byte type)
+    {
+        Debug.Log("Upgrade: " + upgradeDatas[type].name);
+        Debug.Log("Level Par: " + lvls[type]);
+        Debug.Log("Type: " + type);
+        GameObject[] gameObjects = new GameObject[parent.childCount];
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            GameObject child = parent.GetChild(i).gameObject;
+            Transform t = child.transform;
+            Destroy(child.gameObject);
+            gameObjects[i] = Instantiate(upgradeDatas[type].upgradedPrefab[lvls[type]], t.position, t.rotation);
+
+        }
+        foreach(GameObject t in gameObjects)
+        {
+            t.transform.parent = parent;
+        }
     }
 }
