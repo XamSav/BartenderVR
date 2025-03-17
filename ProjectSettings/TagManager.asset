@@ -8,6 +8,7 @@ TagManager:
   - Liquid
   - Drink
   - MixingGlass
+  - DeliveryZone
   layers:
   - Default
   - TransparentFX

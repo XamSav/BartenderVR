@@ -19,7 +19,7 @@ public class MusicController : MonoBehaviour
 
     void LaunchMusic()
     {
-        if (_clips != null)
+        if (_clips != null && _clips.Length > 0)
         {
             _source.Stop();
             _source.clip = _clips[Random.Range(0, _clips.Length)];

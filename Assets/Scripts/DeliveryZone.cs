@@ -1,27 +1,20 @@
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class DeliveryZone : MonoBehaviour
 {
-    Customer waitingCustomer;
-    GlassReceiver cocktail;
-    private void OnTriggerEnter(Collider col)
+    [SerializeField] private Customer waitingCustomer;
+    [SerializeField] private GlassReceiver cocktail;
+    
+    public void SetDrink(GlassReceiver glas)
     {
-        if (col.CompareTag("Drink"))
+        cocktail = glas;
+        if(cocktail.ingredients.Count > 0)
         {
-            try
+            if (waitingCustomer != null)
             {
-                cocktail = col.GetComponent<GlassReceiver>();
-                if (cocktail.ingredients.Count > 0)
-                {
-                    if (waitingCustomer != null)
-                    {
-                        waitingCustomer.ReceiveDrink(cocktail);
-                        col.gameObject.SetActive(false); // Desactivar el cóctel 
-                    }
-                }
-            }
-            catch {
-                Debug.Log("Error GlassReceiver");
+                waitingCustomer.ReceiveDrink(cocktail);
+                glas.gameObject.SetActive(false); // Desactivar el cóctel 
             }
         }
     }

@@ -7,9 +7,7 @@ public class UpgradeManager : MonoBehaviour
     private byte[] lvls = new byte[3] { 0, 0, 0 };
     public static UpgradeManager instance;
     public UpgradeData[] upgradeDatas = new UpgradeData[3];
-    public Transform _sillasParent;
-    public Transform _mesasParent;
-    public Transform _lamparasParent;
+    public Transform[] _parents = new Transform[3];
     private int playerMoney;
     void Awake() { 
         if(instance != null && instance != this)
@@ -47,16 +45,19 @@ public class UpgradeManager : MonoBehaviour
     }
     private Transform GetParentTransform(byte item)
     {
-        switch (item)
+        if(item >= _parents.Length)
         {
-            case 0: return _sillasParent;
-            case 1: return _mesasParent;
-            case 2: return _lamparasParent;
-            default: throw new ArgumentOutOfRangeException(nameof(item), "Índice de mejora no válido");
-        }
+            Debug.LogError("Índice de mejora no válido");
+            return null;
+        }else return _parents[item];
     }
     private void UpgradeItems(Transform parent, byte type)
     {
+        if(parent == null)
+        {
+            Debug.LogError("No se ha encontrado el padre");
+            return;
+        }
         GameObject[] gameObjects = new GameObject[parent.childCount];
         for (int i = 0; i < parent.childCount; i++)
         {

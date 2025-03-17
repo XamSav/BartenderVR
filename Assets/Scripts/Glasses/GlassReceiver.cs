@@ -16,7 +16,6 @@ public class GlassReceiver : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collider: "+ other.gameObject.name);
         if (other.gameObject.CompareTag("MixingGlass")) // El vaso de mezcla debe tener este tag
         {
             GlassContent mixingGlass = other.gameObject.GetComponent<GlassContent>(); // Obtener contenido del vaso de mezcla
@@ -26,7 +25,17 @@ public class GlassReceiver : MonoBehaviour
             }
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DeliveryZone")){
+            Debug.Log("DeliveryZone");
+            DeliveryZone deliveryZone = other.GetComponent<DeliveryZone>();
+            if (deliveryZone != null)
+            {
+                deliveryZone.SetDrink(this);
+            }
+        }
+    }
     void TransferContents(GlassContent mixingGlass)
     {
         float remainingCapacity = maxCapacity - currentVolume;
@@ -35,7 +44,7 @@ public class GlassReceiver : MonoBehaviour
 
         if (afterTransfer <= 0)
         {
-            Debug.Log("El vaso receptor est� lleno o no hay l�quido que verter.");
+            Debug.Log("El vaso receptor esta lleno o no hay liquido que verter.");
             return;
         }
 

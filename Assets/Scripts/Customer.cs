@@ -14,7 +14,6 @@ public class Customer : MonoBehaviour
     public Image cocktailImageUI; // Imagen del cóctel
 
     public CocktailRecipe requestedCocktail; //Pedido del cliente
-    public DeliveryZone delivery;
     [SerializeField]private float patienceTime = 20f; // Tiempo antes de irse
     private byte indexPos;
     private bool isWaiting = false;
@@ -46,16 +45,13 @@ public class Customer : MonoBehaviour
         isWaiting = true;
         targetPosition.GetComponentInChildren<DeliveryZone>().SetCustomer(this);
         yield return new WaitForSeconds(patienceTime);
-        if (isWaiting)
+        if (isWaiting && !isLeaving)
         {
             Leave(false); // Cliente se va enojado
         }
     }
-
     public void ReceiveDrink(GlassReceiver glass)
     {
-        //if (!isWaiting) return;
-
         int result = GameManager.instance.CheckCocktail(glass, requestedCocktail);
         switch (result)
         {
