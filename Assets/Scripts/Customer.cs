@@ -29,7 +29,6 @@ public class Customer : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(Vector3.Distance(transform.position, targetPosition.position) < 0.1f);
         if(Vector3.Distance(transform.position, targetPosition.position) < 0.1f && !isWaiting && !isLeaving)
         {
             StartCoroutine(WaitForDrink());
@@ -65,11 +64,12 @@ public class Customer : MonoBehaviour
                 break;
             case 1:
                 Debug.Log("Cantidad Incorrecta");
+                GameManager.instance.ClientPay(Mathf.RoundToInt(requestedCocktail.price / 2));
                 break;
             case 2: Debug.Log("Ingredientes Incorrectos");
                 break;
             case 3:
-                GameManager.instance.ClientPay(100);
+                GameManager.instance.ClientPay(requestedCocktail.price);
                 Debug.Log("Coctel Bien Hecho");
                 break;
         }

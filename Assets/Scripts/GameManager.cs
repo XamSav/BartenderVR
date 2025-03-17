@@ -77,6 +77,10 @@ public class GameManager : MonoBehaviour
     {
         playerMoney += money;
     }
+    public void PlayerPay(int cost)
+    {
+        playerMoney -= cost;
+    }
     [System.Serializable]
     public class Card
     {
