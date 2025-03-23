@@ -4324,7 +4324,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 83d6cd79f6b617a47ad522d058405461, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 19c0d44a96606e447936d533fa70fdea, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &471479206
 GameObject:
@@ -22887,7 +22887,7 @@ MonoBehaviour:
   - {fileID: 276712509}
   cocktailMenu:
   - {fileID: 11400000, guid: 7008bfd9eb24f1b408a3a74e5c687102, type: 2}
-  spawnInterval: 2
+  spawnInterval: 4
 --- !u!1 &2110251176
 GameObject:
   m_ObjectHideFlags: 0
