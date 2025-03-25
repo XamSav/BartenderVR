@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GlassReceiver : MonoBehaviour
 {
-    [System.Serializable]
+    [System.Serializable]   
     public class IngredientsData
     {
         public string ingredientName;
@@ -67,11 +67,13 @@ public class GlassReceiver : MonoBehaviour
             if (item.ingredientName == ingredient.ingredientName)
             {
                 item.amount += ingredient.amount;
+                
                 return;
             }
         }
         ingredients.Add(new IngredientsData { ingredientName = ingredient.ingredientName, amount = ingredient.amount });
         currentVolume += ingredient.amount;
+        
     }
 
     public void PrintContents()

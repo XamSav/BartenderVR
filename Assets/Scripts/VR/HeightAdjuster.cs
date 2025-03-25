@@ -5,8 +5,8 @@ public class HeightAdjuster : MonoBehaviour
 {
     public Slider heightSlider;
     public Transform cameraOffset;  // Asigna el GameObject "Camera Offset" del XR Rig
-    private float minHeight = 1.2f; // Altura mínima permitida
-    private float maxHeight = 2.2f; // Altura máxima permitida
+    [SerializeField][Range(0, 3f)] private float minHeight = 1.2f; // Altura mínima permitida
+    [SerializeField][Range(0, 3f)] private float maxHeight = 1.2f; // Altura máxima permitida
 
     void Start()
     {

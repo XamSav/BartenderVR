@@ -26,6 +26,17 @@ public class GlassContent : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Liquid")) //PONER LAS PARTICULAS DE LIQUIDO CON ESTE TAG
+        {
+            LiquidSource liquid = col.gameObject.GetComponent<LiquidSource>();
+            if (liquid != null)
+            {
+                AddIngredient(liquid.ingredientName, liquid.flowRate);
+            }
+        }
+    }
 
     void AddIngredient(string ingredient, float amount)
     {
@@ -42,15 +53,16 @@ public class GlassContent : MonoBehaviour
             if (item.ingredientName == ingredient)
             {
                 item.amount += amount;
+                HUD.instance.UpdateGlass(item.ingredientName, item.amount.ToString());
                 found = true;
                 break;
             }
         }
 
-        // Si no est� en la lista, agregarlo
         if (!found)
         {
             ingredients.Add(new IngredientData { ingredientName = ingredient, amount = amount });
+            HUD.instance.UpdateGlass(ingredient.ToString(), amount.ToString());
         }
 
         currentVolume += amount;

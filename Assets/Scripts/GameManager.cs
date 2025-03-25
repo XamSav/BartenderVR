@@ -4,8 +4,9 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Managers")]
+    [SerializeField] private HUD hud;
     [Header("Puntuacion")]
-    private byte _score = 0;
     private byte _reputation = 100;
     private int playerMoney = 100;
     [Header("Tiempo")]
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
         instance = this;
+        UpdateUI();
     }
     private void Update()
     {
@@ -76,10 +78,16 @@ public class GameManager : MonoBehaviour
     public void ClientPay(int money)
     {
         playerMoney += money;
+        UpdateUI();
     }
     public void PlayerPay(int cost)
     {
         playerMoney -= cost;
+        UpdateUI();
+    }
+    private void UpdateUI()
+    {
+        hud.UpdateMoney(playerMoney);
     }
     [System.Serializable]
     public class Card
