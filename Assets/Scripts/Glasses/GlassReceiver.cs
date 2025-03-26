@@ -3,17 +3,10 @@ using UnityEngine;
 
 public class GlassReceiver : MonoBehaviour
 {
-    [System.Serializable]   
-    public class IngredientsData
-    {
-        public string ingredientName;
-        public float amount; // Cantidad en ml
-    }
-
-    public List<IngredientsData> ingredients = new List<IngredientsData>(); // Lista de ingredientes en el vaso
-    public float maxCapacity = 300f; // Capacidad m�xima en ml
+    public List<IngredientData> ingredients = new List<IngredientData>(); // Lista de ingredientes en el vaso
+    public float maxCapacity = 300f; // Capacidad maxima en ml
     private float currentVolume = 0f;
-
+    private ContentUI _contentUI;
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("MixingGlass")) // El vaso de mezcla debe tener este tag
@@ -28,7 +21,6 @@ public class GlassReceiver : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("DeliveryZone")){
-            Debug.Log("DeliveryZone");
             DeliveryZone deliveryZone = other.GetComponent<DeliveryZone>();
             if (deliveryZone != null)
             {
@@ -50,7 +42,7 @@ public class GlassReceiver : MonoBehaviour
 
         foreach (var ingredient in mixingGlass.ingredients)
         {
-            AddIngredient(new IngredientsData { ingredientName = ingredient.ingredientName, amount = ingredient.amount });
+            AddIngredient(new IngredientData { ingredientName = ingredient.ingredientName, amount = ingredient.amount });
         }
 
         mixingGlass.ClearContents();
@@ -58,7 +50,7 @@ public class GlassReceiver : MonoBehaviour
         PrintContents();
     }
 
-    void AddIngredient(IngredientsData ingredient)
+    void AddIngredient(IngredientData ingredient)
     {
         if (currentVolume + ingredient.amount > maxCapacity) return;//Si sobre pasa sal
 
@@ -67,13 +59,11 @@ public class GlassReceiver : MonoBehaviour
             if (item.ingredientName == ingredient.ingredientName)
             {
                 item.amount += ingredient.amount;
-                
                 return;
             }
         }
-        ingredients.Add(new IngredientsData { ingredientName = ingredient.ingredientName, amount = ingredient.amount });
+        ingredients.Add(new IngredientData { ingredientName = ingredient.ingredientName, amount = ingredient.amount });
         currentVolume += ingredient.amount;
-        
     }
 
     public void PrintContents()
@@ -83,5 +73,9 @@ public class GlassReceiver : MonoBehaviour
         {
             Debug.Log($"{item.ingredientName}: {item.amount:F2}ml");
         }
+    }
+    public void SetContentUI(ContentUI contentUI)
+    {
+        _contentUI = contentUI;
     }
 }

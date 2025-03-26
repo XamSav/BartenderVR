@@ -1,20 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GlassContent : MonoBehaviour
 {
-    // Clase para saber los ingredientes
-    [System.Serializable]
-    public class IngredientData
-    {
-        public string ingredientName;
-        public float amount; // ml
-    }
-
+    [SerializeField] private Transform _liquidCardParent;
     public List<IngredientData> ingredients = new List<IngredientData>(); // Lista de ingredientes en el vaso
     public float maxCapacity = 300f;
     private float currentVolume = 0f;
-
+    private ContentUI _contentUI;
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Liquid")) //PONER LAS PARTICULAS DE LIQUIDO CON ESTE TAG
@@ -53,7 +46,7 @@ public class GlassContent : MonoBehaviour
             if (item.ingredientName == ingredient)
             {
                 item.amount += amount;
-                HUD.instance.UpdateGlass(item.ingredientName, item.amount.ToString());
+                
                 found = true;
                 break;
             }
@@ -62,9 +55,8 @@ public class GlassContent : MonoBehaviour
         if (!found)
         {
             ingredients.Add(new IngredientData { ingredientName = ingredient, amount = amount });
-            HUD.instance.UpdateGlass(ingredient.ToString(), amount.ToString());
         }
-
+        _contentUI.UpdateUI(ingredients);
         currentVolume += amount;
         Debug.Log($"Añadido {amount:F2}ml de {ingredient}. Total: {currentVolume:F2}ml");
         //GameManager.instance.AddLiquid(ingredient, amount);
@@ -79,5 +71,10 @@ public class GlassContent : MonoBehaviour
         ingredients.Clear();
         currentVolume = 0f;
         Debug.Log("Vaso de mezcla vaciado.");
+        _contentUI.Clear();
+    }
+    public void SetContentUI(ContentUI content)
+    {
+        _contentUI = content;
     }
 }

@@ -5,12 +5,6 @@ using UnityEngine;
 public class CocktailRecipe : ScriptableObject
 {
     [System.Serializable]
-    public class Ingredient
-    {
-        public string ingredientName;
-        public float amount; // Cantidad en ml
-    }
-    [System.Serializable]
     public class Decorations
     {
         public string decorationName;
@@ -20,6 +14,6 @@ public class CocktailRecipe : ScriptableObject
     public string cocktailName;
     public Sprite cocktailImage;
     public int price;
-    public List<Ingredient> ingredients = new List<Ingredient>();
+    public List<IngredientData> ingredients = new List<IngredientData>();
     public List<Decorations> decorations = new List<Decorations>();
 }
