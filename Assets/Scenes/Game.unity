@@ -6110,6 +6110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553052821}
+  - component: {fileID: 553052822}
   m_Layer: 0
   m_Name: Mezcladora
   m_TagString: Untagged
@@ -6130,11 +6131,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9014253862064901659}
   - {fileID: 3844742448918874166}
+  - {fileID: 9014253862064901659}
   - {fileID: 558355158382011979}
   m_Father: {fileID: 2027534017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553052822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553052820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32c9f0dc66d69a4f8879e84b0299d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isClosed: 0
 --- !u!1 &558498187
 GameObject:
   m_ObjectHideFlags: 0
@@ -24064,7 +24078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2027534017
 Transform:
   m_ObjectHideFlags: 0
@@ -33171,6 +33185,67 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &3546543616858114232
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 805028966253122930, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.538
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.719
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163307899323974242, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357270910904872780, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
+      propertyPath: m_Name
+      value: Particle System
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b92f1eb51d1feed45b2bc3cb27d2f8a0, type: 3}
 --- !u!1 &3576111177707319877
 GameObject:
   m_ObjectHideFlags: 0
@@ -34660,6 +34735,7 @@ MonoBehaviour:
   _liquidCardParent: {fileID: 37129375}
   ingredients: []
   maxCapacity: 300
+  hasStrainer: 0
 --- !u!114 &4613666203423678294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36939,7 +37015,7 @@ GameObject:
   - component: {fileID: 5686550792059302714}
   m_Layer: 0
   m_Name: Filtro
-  m_TagString: Untagged
+  m_TagString: Strainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39067,7 +39143,7 @@ GameObject:
   - component: {fileID: 5769007931657481179}
   m_Layer: 0
   m_Name: Tapa
-  m_TagString: Untagged
+  m_TagString: ShakerTop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41258,3 +41334,4 @@ SceneRoots:
   - {fileID: 4925285257156781460}
   - {fileID: 2027534017}
   - {fileID: 1694237}
+  - {fileID: 3546543616858114232}

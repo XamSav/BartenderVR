@@ -9,6 +9,8 @@ TagManager:
   - Drink
   - MixingGlass
   - DeliveryZone
+  - ShakerTop
+  - Strainer
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GlassReceiver : MonoBehaviour
@@ -7,17 +8,19 @@ public class GlassReceiver : MonoBehaviour
     public float maxCapacity = 300f; // Capacidad maxima en ml
     private float currentVolume = 0f;
     private ContentUI _contentUI;
-    private void OnCollisionEnter(Collision other)
+    [SerializeField] private Strainer strainer;
+    private void OnCollisionEnter(Collision col)
     {
-        if (other.gameObject.CompareTag("MixingGlass")) // El vaso de mezcla debe tener este tag
+        if (col.gameObject.CompareTag("MixingGlass")) // El vaso de mezcla debe tener este tag
         {
-            GlassContent mixingGlass = other.gameObject.GetComponent<GlassContent>(); // Obtener contenido del vaso de mezcla
-            if (mixingGlass != null)
+            LiquidSource liquid = col.gameObject.GetComponent<LiquidSource>();
+            if (liquid != null)
             {
-                TransferContents(mixingGlass);
+                AddIngredient(liquid);
             }
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("DeliveryZone")){
@@ -28,52 +31,34 @@ public class GlassReceiver : MonoBehaviour
             }
         }
     }
-    void TransferContents(GlassContent mixingGlass)
+
+    void AddIngredient(LiquidSource liquid)
     {
-        float remainingCapacity = maxCapacity - currentVolume;
-        float afterTransfer = remainingCapacity - mixingGlass.GetCurrentVolume();
-        //float transferVolume = Mathf.Min(mixingGlass.GetCurrentVolume(), remainingCapacity);
+        if (currentVolume + liquid.flowRate > maxCapacity) return; //Vaso lleno
+        //Derramar
 
-        if (afterTransfer <= 0)
-        {
-            Debug.Log("El vaso receptor esta lleno o no hay liquido que verter.");
-            return;
-        }
-
-        foreach (var ingredient in mixingGlass.ingredients)
-        {
-            AddIngredient(new IngredientData { ingredientName = ingredient.ingredientName, amount = ingredient.amount });
-        }
-
-        mixingGlass.ClearContents();
-        Debug.Log("Contenido transferido al vaso normal.");
-        PrintContents();
-    }
-
-    void AddIngredient(IngredientData ingredient)
-    {
-        if (currentVolume + ingredient.amount > maxCapacity) return;//Si sobre pasa sal
-
+        // Buscar si ya existe el ingrediente en la mezcla
+        bool found = false;
         foreach (var item in ingredients)
         {
-            if (item.ingredientName == ingredient.ingredientName)
+            if (item.ingredientName == liquid.ingredientName)
             {
-                item.amount += ingredient.amount;
-                return;
+                item.amount += liquid.flowRate;
+                found = true;
+                break;
             }
         }
-        ingredients.Add(new IngredientData { ingredientName = ingredient.ingredientName, amount = ingredient.amount });
-        currentVolume += ingredient.amount;
+        if (!found)
+        {
+            ingredients.Add(new IngredientData { ingredientName = liquid.ingredientName, amount = liquid.flowRate });
+        }
+        currentVolume += liquid.flowRate;
+        _contentUI.UpdateUI(ingredients);
+        Debug.Log($"Añadido {liquid.flowRate:F2}ml de {liquid.ingredientName}. Total: {currentVolume:F2}ml");
     }
 
-    public void PrintContents()
-    {
-        Debug.Log("Ingredientes en el vaso normal:");
-        foreach (var item in ingredients)
-        {
-            Debug.Log($"{item.ingredientName}: {item.amount:F2}ml");
-        }
-    }
+
+
     public void SetContentUI(ContentUI contentUI)
     {
         _contentUI = contentUI;

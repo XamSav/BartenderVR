@@ -8,10 +8,26 @@ public class GlassContent : MonoBehaviour
     public float maxCapacity = 300f;
     private float currentVolume = 0f;
     private ContentUI _contentUI;
+    [SerializeField] private bool hasStrainer = false; // Variable para indicar si el vaso tiene colador
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Particle Colision");
+        if (other.CompareTag("Liquid")) //PONER LAS PARTICULAS DE LIQUIDO CON ESTE TAG
+        {
+            Debug.Log("Particle Colision con liquido");
+            LiquidSource liquid = other.GetComponent<LiquidSource>();
+            if (liquid != null)
+            {
+                AddIngredient(liquid.ingredientName, liquid.flowRate);
+            }
+        }
+    }
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Liquid")) //PONER LAS PARTICULAS DE LIQUIDO CON ESTE TAG
         {
+            Debug.Log("Trigger con liquido");
             LiquidSource liquid = col.GetComponent<LiquidSource>();
             if (liquid != null)
             {
@@ -23,6 +39,7 @@ public class GlassContent : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Liquid")) //PONER LAS PARTICULAS DE LIQUIDO CON ESTE TAG
         {
+            Debug.Log("Colision con liquido");
             LiquidSource liquid = col.gameObject.GetComponent<LiquidSource>();
             if (liquid != null)
             {
@@ -33,11 +50,8 @@ public class GlassContent : MonoBehaviour
 
     void AddIngredient(string ingredient, float amount)
     {
-        if (currentVolume + amount > maxCapacity)
-        {
-            Debug.Log("El vaso esta lleno!");
-            return;
-        }
+        if (currentVolume + amount > maxCapacity) return; //Vaso lleno
+        //Derramar
 
         // Buscar si ya existe el ingrediente en la mezcla
         bool found = false;
@@ -46,20 +60,48 @@ public class GlassContent : MonoBehaviour
             if (item.ingredientName == ingredient)
             {
                 item.amount += amount;
-                
                 found = true;
                 break;
             }
         }
-
         if (!found)
         {
             ingredients.Add(new IngredientData { ingredientName = ingredient, amount = amount });
         }
-        _contentUI.UpdateUI(ingredients);
         currentVolume += amount;
+        _contentUI.UpdateUI(ingredients);
         Debug.Log($"Añadido {amount:F2}ml de {ingredient}. Total: {currentVolume:F2}ml");
-        //GameManager.instance.AddLiquid(ingredient, amount);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    public void ReduceVolume(float amount)
+    {
+        currentVolume -= amount;
+
+        for (int i = 0; i < ingredients.Count; i++)
+        {
+            ingredients[i].amount -= amount;
+        }
+        Debug.Log($"Derrame de {amount:F2}ml. Nuevo volumen: {currentVolume:F2}ml");
+    }
+
+    public void SetStrainer(bool state)
+    {
+        hasStrainer = state;
+    }
+
+    public bool HasStrainer()
+    {
+        return hasStrainer;
     }
     public float GetCurrentVolume()
     {
