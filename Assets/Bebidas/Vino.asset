@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4890000a672c7644fa84e186ba5a0d00, type: 3}
-  m_Name: Mojito
+  m_Name: Vino
   m_EditorClassIdentifier: 
-  cocktailName: Mojito
+  cocktailName: 
   cocktailImage: {fileID: 0}
-  price: 10
+  price: 0
   ingredients:
-  - ingredientName: Ron Blanco
-    amount: 50
-  - ingredientName: Jugo de Limon
-    amount: 30
-  - ingredientName: Jarabe de Azucar
-    amount: 20
-  - ingredientName: Agua con Gas
-    amount: 100
+  - ingredientName: Vino
+    amount: 300
   decorations: []

@@ -30,7 +30,7 @@ public class GhostPreview3d : MonoBehaviour
                         newPosition.y += (hitHeight / 2) + (previewHeight / 2);
 
                         _lastInstance = Instantiate(preview, newPosition, rotation);
-                        Renderer renderer = _lastInstance.GetComponent<Collider>().GetComponent<Renderer>();
+                        Renderer renderer = _lastInstance.GetComponent<Renderer>();
                         if (renderer != null)
                         {
                             renderer.material = _transparent;

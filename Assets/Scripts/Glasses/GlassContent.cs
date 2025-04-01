@@ -12,14 +12,13 @@ public class GlassContent : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("Particle Colision");
-        if (other.CompareTag("Liquid")) //PONER LAS PARTICULAS DE LIQUIDO CON ESTE TAG
+        if (other.CompareTag("Liquid"))
         {
             Debug.Log("Particle Colision con liquido");
             LiquidSource liquid = other.GetComponent<LiquidSource>();
             if (liquid != null)
             {
-                AddIngredient(liquid.ingredientName, liquid.flowRate);
+                AddIngredient(liquid);
             }
         }
     }
@@ -31,7 +30,7 @@ public class GlassContent : MonoBehaviour
             LiquidSource liquid = col.GetComponent<LiquidSource>();
             if (liquid != null)
             {
-                AddIngredient(liquid.ingredientName, liquid.flowRate);
+                AddIngredient(liquid);
             }
         }
     }
@@ -43,34 +42,34 @@ public class GlassContent : MonoBehaviour
             LiquidSource liquid = col.gameObject.GetComponent<LiquidSource>();
             if (liquid != null)
             {
-                AddIngredient(liquid.ingredientName, liquid.flowRate);
+                AddIngredient(liquid);
             }
         }
     }
 
-    void AddIngredient(string ingredient, float amount)
+    void AddIngredient(LiquidSource liquid)
     {
-        if (currentVolume + amount > maxCapacity) return; //Vaso lleno
+        if (currentVolume + liquid.flowRate > maxCapacity) return; //Vaso lleno
         //Derramar
 
         // Buscar si ya existe el ingrediente en la mezcla
         bool found = false;
         foreach (var item in ingredients)
         {
-            if (item.ingredientName == ingredient)
+            if (item.ingredientName == liquid.ingredientName)
             {
-                item.amount += amount;
+                item.amount += liquid.flowRate;
                 found = true;
                 break;
             }
         }
         if (!found)
         {
-            ingredients.Add(new IngredientData { ingredientName = ingredient, amount = amount });
+            ingredients.Add(new IngredientData { ingredientName = liquid.ingredientName, amount = liquid.flowRate });
         }
-        currentVolume += amount;
-        _contentUI.UpdateUI(ingredients);
-        Debug.Log($"Añadido {amount:F2}ml de {ingredient}. Total: {currentVolume:F2}ml");
+        currentVolume += liquid.flowRate;
+        _contentUI.UpdateUI(liquid);
+        Debug.Log($"Añadido {liquid.flowRate:F2}ml de {liquid.ingredientName}. Total: {currentVolume:F2}ml");
     }
 
 

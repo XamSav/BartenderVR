@@ -53,7 +53,7 @@ public class GlassReceiver : MonoBehaviour
             ingredients.Add(new IngredientData { ingredientName = liquid.ingredientName, amount = liquid.flowRate });
         }
         currentVolume += liquid.flowRate;
-        _contentUI.UpdateUI(ingredients);
+        _contentUI.UpdateUI(liquid);
         Debug.Log($"Añadido {liquid.flowRate:F2}ml de {liquid.ingredientName}. Total: {currentVolume:F2}ml");
     }
 
