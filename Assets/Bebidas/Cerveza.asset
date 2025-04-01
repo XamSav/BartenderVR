@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cerveza
   m_EditorClassIdentifier: 
   cocktailName: Cerveza
-  cocktailImage: {fileID: 0}
+  cocktailImage: {fileID: 21300000, guid: 3de1c4f32451c8f4fa00ddefb5e4665a, type: 3}
   price: 2
   ingredients:
   - ingredientName: Cerveza

@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using Unity.Android.Gradle.Manifest;
 public class ContentUI : MonoBehaviour
 {
     private Transform _parent;
