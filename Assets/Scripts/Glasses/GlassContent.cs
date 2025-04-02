@@ -68,19 +68,10 @@ public class GlassContent : MonoBehaviour
             ingredients.Add(new IngredientData { ingredientName = liquid.ingredientName, amount = liquid.flowRate });
         }
         currentVolume += liquid.flowRate;
+        if(!_contentUI.gameObject.activeInHierarchy)
+            _contentUI.gameObject.SetActive(true);
         _contentUI.UpdateUI(liquid);
-        Debug.Log($"Añadido {liquid.flowRate:F2}ml de {liquid.ingredientName}. Total: {currentVolume:F2}ml");
     }
-
-
-
-
-
-
-
-
-
-
 
     public void ReduceVolume(float amount)
     {
@@ -111,7 +102,6 @@ public class GlassContent : MonoBehaviour
     {
         ingredients.Clear();
         currentVolume = 0f;
-        Debug.Log("Vaso de mezcla vaciado.");
         _contentUI.Clear();
     }
     public void SetContentUI(ContentUI content)

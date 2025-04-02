@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GinLemon
   m_EditorClassIdentifier: 
   cocktailName: GinLemon
-  cocktailImage: {fileID: 21300000, guid: 3de1c4f32451c8f4fa00ddefb5e4665a, type: 3}
+  cocktailImage: {fileID: 21300000, guid: 18ec7286a82feb345b45143d5b32383b, type: 3}
   price: 7
   ingredients:
   - ingredientName: Limon

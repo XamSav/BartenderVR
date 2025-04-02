@@ -9,6 +9,17 @@ public class GlassReceiver : MonoBehaviour
     private float currentVolume = 0f;
     private ContentUI _contentUI;
     [SerializeField] private Strainer strainer;
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("Liquid"))
+        {
+            LiquidSource liquid = other.GetComponent<LiquidSource>();
+            if (liquid != null)
+            {
+                AddIngredient(liquid);
+            }
+        }
+    }
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("MixingGlass")) // El vaso de mezcla debe tener este tag
@@ -53,8 +64,9 @@ public class GlassReceiver : MonoBehaviour
             ingredients.Add(new IngredientData { ingredientName = liquid.ingredientName, amount = liquid.flowRate });
         }
         currentVolume += liquid.flowRate;
+        if (!_contentUI.gameObject.activeInHierarchy)
+            _contentUI.gameObject.SetActive(true);
         _contentUI.UpdateUI(liquid);
-        Debug.Log($"Añadido {liquid.flowRate:F2}ml de {liquid.ingredientName}. Total: {currentVolume:F2}ml");
     }
 
 

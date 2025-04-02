@@ -12,11 +12,14 @@ public class HUD : MonoBehaviour
     [Header("Glass UI")]
     [SerializeField] private GameObject _parentList;
     [SerializeField] private GameObject _prefabCard;
-    [Header("Recipe Setup")]
+    [Header("Cocktail Content")]
     [SerializeField] private GameObject _cocktailsPanel;//Panel de los cocteles
-    [SerializeField] private GameObject _prefabRecipe;//Prefab de la receta
+    [SerializeField] private GameObject _cocktailsContent;//Panel de los cocteles
     [SerializeField] private GameObject _prefabRecipeIMG;//Prefab de la imagen de la receta
+    [Header("Recipe")]
     [SerializeField] private GameObject _recipePanel;//Panel de la receta
+    [SerializeField] private GameObject _recipeContent;//Contenido de la receta
+    [SerializeField] private GameObject _prefabRecipe;//Prefab de la receta
     [SerializeField] private TMP_Text _titleRecipe;//Titulo de la receta
     [SerializeField] private CocktailRecipe[] _cocktails;//Recetas
     public static HUD instance;
@@ -34,27 +37,32 @@ public class HUD : MonoBehaviour
         byte i = 0;
         foreach (CocktailRecipe cocktail in _cocktails)
         {
-            Transform button = Instantiate(_prefabRecipeIMG, _cocktailsPanel.transform).transform.GetChild(0);
+            Transform button = Instantiate(_prefabRecipeIMG, _cocktailsContent.transform).transform.GetChild(0);
             Image image = button.GetComponent<Button>().targetGraphic.GetComponent<Image>();
             image.sprite = cocktail.cocktailImage;
-            button.GetComponent<Button>().onClick.AddListener(() => ShowRecipe(i));
+            Debug.Log("Antes de asignar la funcion");
+            byte index = i;
+            button.GetComponent<Button>().onClick.AddListener(delegate { ShowRecipe(index); });
             i++;
         }
     }
     private void ShowRecipe(int id_cocktail)
     {
+        _cocktailsPanel.SetActive(false);
         //Limpiamos la receta anterior
-        foreach (Transform child in _recipePanel.transform)
+        foreach (Transform child in _recipeContent.transform)
         {
             Destroy(child.gameObject);
         }
+        Debug.Log("Cocktail ID: " + id_cocktail);
         _titleRecipe.text = _cocktails[id_cocktail].cocktailName;
         foreach(IngredientData ingredient in _cocktails[id_cocktail].ingredients)
         {
-            GameObject list = Instantiate(_prefabRecipe, _recipePanel.transform);
+            GameObject list = Instantiate(_prefabRecipe, _recipeContent.transform);
             list.transform.GetChild(0).GetComponent<TMP_Text>().text = ingredient.ingredientName;
             list.transform.GetChild(1).GetComponent<TMP_Text>().text = ingredient.amount + "ml";
         }
+        _recipePanel.SetActive(true);
     }
     public void BuyUpgrade(int type)
     {

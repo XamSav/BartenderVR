@@ -14,11 +14,15 @@ public class ContentUI : MonoBehaviour
             _parent.GetComponent<GlassContent>().SetContentUI(this);
         else if (_parent.GetComponent<GlassReceiver>() != null)
             _parent.GetComponent<GlassReceiver>().SetContentUI(this);
+
+        if(_ingredients.Count == 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void UpdateUI(LiquidSource liquid)
     {
-        //Clear();
         if (_ingredients.Count == 0)
         {
             AddNewCard(liquid.ingredientName, liquid.flowRate);
@@ -56,5 +60,6 @@ public class ContentUI : MonoBehaviour
         {
             Destroy(child);
         }
+        gameObject.SetActive(false);
     }
 }

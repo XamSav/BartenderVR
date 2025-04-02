@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4890000a672c7644fa84e186ba5a0d00, type: 3}
   m_Name: Kalimocho
   m_EditorClassIdentifier: 
-  cocktailName: 
-  cocktailImage: {fileID: 21300000, guid: 3de1c4f32451c8f4fa00ddefb5e4665a, type: 3}
+  cocktailName: Kalimocho
+  cocktailImage: {fileID: 21300000, guid: 7aea7c130bc32a94786d4f05d31f567c, type: 3}
   price: 0
   ingredients:
   - ingredientName: Vino
