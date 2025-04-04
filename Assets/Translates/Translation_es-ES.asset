@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Translation_es-ES
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es-ES
+  m_SharedData: {fileID: 11400000, guid: 8d9c1f541ede9bb4794806a00ffe0377, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 35384414208
+    m_Localized: Ajustes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328914391040
+    m_Localized: Cocteles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2879076388864
+    m_Localized: Inicio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2980003926016
+    m_Localized: Mejoras
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4289977339904
+    m_Localized: Altura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4538426937344
+    m_Localized: Volumen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4599626027008
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4701459533824
+    m_Localized: Efectos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4760934764544
+    m_Localized: "Atr\xE1s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5694381314048
+    m_Localized: Receta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6334734094336
+    m_Localized: Sillas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6441420410880
+    m_Localized: Mesas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6759583535104
+    m_Localized: "L\xE1mparas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6868253757440
+    m_Localized: Botellas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7417732747264
+    m_Localized: Nivel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16685919850496
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

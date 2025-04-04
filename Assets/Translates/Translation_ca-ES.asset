@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Translation_ca-ES
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: ca-ES
+  m_SharedData: {fileID: 11400000, guid: 8d9c1f541ede9bb4794806a00ffe0377, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 35384414208
+    m_Localized: "Configuraci\xF3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328914391040
+    m_Localized: Coctels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2879076388864
+    m_Localized: Inici
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2980003926016
+    m_Localized: Millores
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4289977339904
+    m_Localized: "Al\xE7ada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4538426937344
+    m_Localized: Volum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4599626027008
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4701459533824
+    m_Localized: Efectes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4760934764544
+    m_Localized: Enrere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5694381314048
+    m_Localized: Recepta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6334734094336
+    m_Localized: Cadires
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6441420410880
+    m_Localized: Taules
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6759583535104
+    m_Localized: Llums
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6868253757440
+    m_Localized: Ampolles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7417732747264
+    m_Localized: Nivell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16685919850496
+    m_Localized: Llengua
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

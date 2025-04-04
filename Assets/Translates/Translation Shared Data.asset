@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Translation Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Translation
+  m_TableCollectionNameGuidString: 8d9c1f541ede9bb4794806a00ffe0377
+  m_Entries:
+  - m_Id: 35384414208
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328914391040
+    m_Key: Cocktails
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2879076388864
+    m_Key: Main Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2980003926016
+    m_Key: Improvements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4289977339904
+    m_Key: Height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4538426937344
+    m_Key: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4599626027008
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4701459533824
+    m_Key: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4760934764544
+    m_Key: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5694381314048
+    m_Key: Receta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6334734094336
+    m_Key: Chairs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6441420410880
+    m_Key: Tables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6759583535104
+    m_Key: Lamps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6868253757440
+    m_Key: 'Bottles
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7417732747264
+    m_Key: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16685919850496
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6658715092120502486
+  references:
+    version: 2
+    RefIds:
+    - rid: 6658715092120502486
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1743787139234
