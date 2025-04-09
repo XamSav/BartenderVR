@@ -4,9 +4,9 @@ using UnityEngine;
 public class DeliveryZone : MonoBehaviour
 {
     [SerializeField] private Customer waitingCustomer;
-    [SerializeField] private GlassReceiver cocktail;
+    [SerializeField] private GlassContent cocktail;
     private bool _canReceive = true;
-    public void SetDrink(GlassReceiver glas)
+    public void SetDrink(GlassContent glas)
     {
         _canReceive = false;
         cocktail = glas;

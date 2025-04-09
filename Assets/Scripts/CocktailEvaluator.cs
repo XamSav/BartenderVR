@@ -7,7 +7,7 @@ public class CocktailEvaluator : MonoBehaviour
     // 1 - Cantidad Incorrecta
     // 2 - Ingredientes Incorrectos
     // 3 - Coctel Bien Hecho
-    public int EvaluateCocktail(GlassReceiver glass, CocktailRecipe requestedCocktail)
+    public int EvaluateCocktail(GlassContent glass, CocktailRecipe requestedCocktail)
     {
         if(glass.ingredients.Count != requestedCocktail.ingredients.Count) { return 0; }
         foreach(var recipeIngredient in requestedCocktail.ingredients)

@@ -5,9 +5,9 @@ public class Botle : MonoBehaviour
     [SerializeField][Range(20, 180)] private float tiltThreshold = 60f;
     public bool isPouring = false;
     [SerializeField] private GameObject _liquidParticles;
+    
     void Update()
     {
-
         float xTilt = transform.eulerAngles.x;
         float zTilt = transform.eulerAngles.z;
         if (zTilt > tiltThreshold && zTilt < 360 - tiltThreshold)

@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         customerSpawner.CustomerLeave(indexPos);
     }
-    public int CheckCocktail(GlassReceiver glass, CocktailRecipe customer)
+    public int CheckCocktail(GlassContent glass, CocktailRecipe customer)
     {
         int result = cocktailEvaluator.EvaluateCocktail(glass, customer);
         return result;

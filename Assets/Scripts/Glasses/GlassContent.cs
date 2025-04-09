@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 public class GlassContent : MonoBehaviour
 {
     public List<IngredientData> ingredients = new List<IngredientData>(); // Lista de ingredientes en el vaso
@@ -8,12 +7,10 @@ public class GlassContent : MonoBehaviour
     private float currentVolume = 0f;
     private ContentUI _contentUI;
     [SerializeField] private bool hasStrainer = false; // Variable para indicar si el vaso tiene colador
-
     private void OnParticleCollision(GameObject other)
     {
         if (other.CompareTag("Liquid"))
         {
-            Debug.Log("Particle Colision con liquido");
             LiquidSource liquid = other.GetComponent<LiquidSource>();
             if (liquid != null)
             {
@@ -30,6 +27,14 @@ public class GlassContent : MonoBehaviour
             if (liquid != null)
             {
                 AddIngredient(liquid);
+            }
+        }
+        if (col.CompareTag("DeliveryZone") && this.gameObject.CompareTag("CocktailGlass"))
+        {
+            DeliveryZone deliveryZone = col.GetComponent<DeliveryZone>();
+            if (deliveryZone != null)
+            {
+                deliveryZone.SetDrink(this);
             }
         }
     }
@@ -82,6 +87,7 @@ public class GlassContent : MonoBehaviour
         }
         Debug.Log($"Derrame de {amount:F2}ml. Nuevo volumen: {currentVolume:F2}ml");
     }
+
 
     public void SetStrainer(bool state)
     {

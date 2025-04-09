@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7343113784097488160}
   - component: {fileID: 4262394554311207028}
   - component: {fileID: 5485981326045033706}
-  - component: {fileID: 2358184275505494303}
+  - component: {fileID: 277224559045035266}
   m_Layer: 0
   m_Name: Copa
   m_TagString: Drink
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 1
---- !u!114 &2358184275505494303
+--- !u!114 &277224559045035266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,11 +234,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8966730244166956000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29500a2dc0a3add42adf160f3cf3d877, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b0a0f329b44c3e448d45e637d9a414a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
   maxCapacity: 300
+  hasStrainer: 0
 --- !u!1001 &1527466565255985955
 PrefabInstance:
   m_ObjectHideFlags: 0

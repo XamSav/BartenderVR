@@ -6,11 +6,11 @@ TagManager:
   tags:
   - Anchor
   - Liquid
-  - Drink
   - MixingGlass
   - DeliveryZone
   - ShakerTop
   - Strainer
+  - CocktailGlass
   layers:
   - Default
   - TransparentFX

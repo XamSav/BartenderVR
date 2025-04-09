@@ -10,11 +10,14 @@ public class ContentUI : MonoBehaviour
     private void Start()
     {
         _parent = transform.parent;
-        if (_parent.GetComponent<GlassContent>() != null)
+        try
+        {
             _parent.GetComponent<GlassContent>().SetContentUI(this);
-        else if (_parent.GetComponent<GlassReceiver>() != null)
-            _parent.GetComponent<GlassReceiver>().SetContentUI(this);
-
+        }
+        catch
+        {
+            Debug.LogError("No se ha podido encontrar el componente GlassContent en el padre.");
+        }
         if(_ingredients.Count == 0)
         {
             gameObject.SetActive(false);

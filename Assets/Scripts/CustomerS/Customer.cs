@@ -50,7 +50,7 @@ public class Customer : MonoBehaviour
             Leave(false); // Cliente se va enojado
         }
     }
-    public void ReceiveDrink(GlassReceiver glass)
+    public void ReceiveDrink(GlassContent glass)
     {
         int result = GameManager.instance.CheckCocktail(glass, requestedCocktail);
         switch (result)

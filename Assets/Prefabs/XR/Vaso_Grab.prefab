@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 2498318641077645086}
   m_Layer: 0
   m_Name: Vaso_Grab
-  m_TagString: MixingGlass
+  m_TagString: DeliveryZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,7 +383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b0a0f329b44c3e448d45e637d9a414a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _liquidCardParent: {fileID: 5211438629360941636}
   ingredients: []
   maxCapacity: 300
   hasStrainer: 0
