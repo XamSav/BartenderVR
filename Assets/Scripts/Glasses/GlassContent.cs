@@ -22,7 +22,6 @@ public class GlassContent : MonoBehaviour
     {
         if (col.CompareTag("Liquid")) //PONER LAS PARTICULAS DE LIQUIDO CON ESTE TAG
         {
-            Debug.Log("Trigger con liquido");
             LiquidSource liquid = col.GetComponent<LiquidSource>();
             if (liquid != null)
             {
