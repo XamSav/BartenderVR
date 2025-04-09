@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 public class GlassContent : MonoBehaviour
 {
-    [SerializeField] private Transform _liquidCardParent;
     public List<IngredientData> ingredients = new List<IngredientData>(); // Lista de ingredientes en el vaso
     public float maxCapacity = 300f;
     private float currentVolume = 0f;
