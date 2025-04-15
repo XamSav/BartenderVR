@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 100
   upgradedPrefab:
-  - {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
-  - {fileID: 2094465940939050539, guid: df6ed9d010f36f645b4d4b41620b1638, type: 3}
-  - {fileID: 6934317031472416742, guid: 638540e351da5ce44a4cdb519e0aa04c, type: 3}
+  - {fileID: 1770846870641099281, guid: 529ecc0874842404081ec66bb3820b58, type: 3}
+  - {fileID: 2840719197177229602, guid: 38126410d4c9cf04298920118735c090, type: 3}
+  - {fileID: 1504868329963258937, guid: cd7ef4d341e3f2c48a16bbcd003c75fd, type: 3}

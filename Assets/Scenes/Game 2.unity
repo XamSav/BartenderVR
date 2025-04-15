@@ -402,11 +402,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22361589}
   m_CullTransparentMesh: 0
---- !u!1 &44272405 stripped
+--- !u!1 &44272405
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 50045181}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 50045182}
+  - component: {fileID: 50045185}
+  m_Layer: 0
+  m_Name: 'silla_5 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &50045181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -479,11 +491,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 50045185}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &50045182 stripped
+--- !u!4 &50045182
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 50045181}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44272405}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.70706147, y: 0.008009523, z: 0.008009524, w: 0.7070614}
+  m_LocalPosition: {x: 5.1247263, y: 0.24101171, z: 22.666481}
+  m_LocalScale: {x: 25.230408, y: 22.540852, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &50045185
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -980,11 +1002,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1371897897}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &114530908 stripped
+--- !u!4 &114530908
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 114530907}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371897894}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5130008, y: 0.4866521, z: 0.48665214, w: 0.5130006}
+  m_LocalPosition: {x: 10.668579, y: 0.24101171, z: 21.228731}
+  m_LocalScale: {x: 25.998419, y: 21.875055, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &123541351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1057,11 +1089,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 890429927}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &123541352 stripped
+--- !u!4 &123541352
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 123541351}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890429924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.100924574, y: 0.69986737, z: 0.6998673, w: -0.10092459}
+  m_LocalPosition: {x: 7.339, y: 0.24101171, z: 16.93119}
+  m_LocalScale: {x: 25.292377, y: 22.488592, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &128513415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3362,11 +3404,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237400192}
   m_CullTransparentMesh: 1
---- !u!1 &237636866 stripped
+--- !u!1 &237636866
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 544007907}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544007908}
+  - component: {fileID: 544007911}
+  m_Layer: 0
+  m_Name: 'silla_7 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &241565780
 GameObject:
   m_ObjectHideFlags: 0
@@ -6552,11 +6606,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488640738}
   m_CullTransparentMesh: 1
---- !u!1 &490969810 stripped
+--- !u!1 &490969810
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1607084197}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607084198}
+  - component: {fileID: 1607084201}
+  m_Layer: 0
+  m_Name: 'silla_8 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &493944547
 GameObject:
   m_ObjectHideFlags: 0
@@ -7040,11 +7106,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 544007911}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &544007908 stripped
+--- !u!4 &544007908
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 544007907}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237636866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.041423373, y: 0.7058925, z: 0.7058923, w: -0.04142336}
+  m_LocalPosition: {x: 4.865407, y: 0.24101171, z: 20.17588}
+  m_LocalScale: {x: 25.240707, y: 22.53218, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &544007911
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7758,11 +7834,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1415998579}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &617569780 stripped
+--- !u!4 &617569780
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 617569779}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415998576}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071067, y: -0.00000016858738, z: -0.00000016858738, w: 0.7071068}
+  m_LocalPosition: {x: 9.472652, y: 0.24101171, z: 22.82432}
+  m_LocalScale: {x: 25.230005, y: 22.541183, z: 37.632313}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624858285
 GameObject:
   m_ObjectHideFlags: 0
@@ -10318,11 +10404,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &775939118 stripped
+--- !u!4 &775939118
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 775939117}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5103576, y: -0.48942327, z: -0.4894229, w: 0.510358}
+  m_LocalPosition: {x: 6.105469, y: 0.24101171, z: 17.89898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778572809
 GameObject:
   m_ObjectHideFlags: 0
@@ -11176,11 +11272,23 @@ MonoBehaviour:
   XROrigin: {fileID: 0}
   minHeight: 0
   maxHeight: 0.56
---- !u!1 &890429924 stripped
+--- !u!1 &890429924
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 123541351}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123541352}
+  - component: {fileID: 890429927}
+  m_Layer: 0
+  m_Name: 'silla_2 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!208 &890429927
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -14305,11 +14413,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1158340121}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &1085070144 stripped
+--- !u!4 &1085070144
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1085070143}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158340118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.100924574, y: 0.69986737, z: 0.6998673, w: -0.10092459}
+  m_LocalPosition: {x: 9.472652, y: 0.24101171, z: 20.339914}
+  m_LocalScale: {x: 25.292377, y: 22.488592, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085374340
 GameObject:
   m_ObjectHideFlags: 0
@@ -14791,11 +14909,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157418143}
   m_CullTransparentMesh: 1
---- !u!1 &1158340118 stripped
+--- !u!1 &1158340118
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1085070143}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085070144}
+  - component: {fileID: 1158340121}
+  m_Layer: 0
+  m_Name: 'silla_11 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!208 &1158340121
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -15614,11 +15744,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1930651732}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &1213562723 stripped
+--- !u!4 &1213562723
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1213562722}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930651729}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.40188557, y: 0.5817971, z: 0.58179736, w: 0.40188545}
+  m_LocalPosition: {x: 5.8947163, y: 0.24101171, z: 21.370613}
+  m_LocalScale: {x: 25.90526, y: 21.95798, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215012699
 GameObject:
   m_ObjectHideFlags: 0
@@ -18013,11 +18153,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366150440}
   m_CullTransparentMesh: 1
---- !u!1 &1371897894 stripped
+--- !u!1 &1371897894
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 114530907}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114530908}
+  - component: {fileID: 1371897897}
+  m_Layer: 0
+  m_Name: 'silla_10 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!208 &1371897897
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -18561,11 +18713,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412716609}
   m_CullTransparentMesh: 1
---- !u!1 &1415998576 stripped
+--- !u!1 &1415998576
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 617569779}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 617569780}
+  - component: {fileID: 1415998579}
+  m_Layer: 0
+  m_Name: 'silla_12 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!208 &1415998579
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -20824,11 +20988,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1571507171}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &1525589488 stripped
+--- !u!4 &1525589488
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1525589487}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571507168}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5130008, y: 0.4866521, z: 0.48665214, w: 0.5130006}
+  m_LocalPosition: {x: 8.534926, y: 0.24101171, z: 17.820005}
+  m_LocalScale: {x: 25.998419, y: 21.875055, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531838841
 GameObject:
   m_ObjectHideFlags: 0
@@ -21377,11 +21551,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1571507168 stripped
+--- !u!1 &1571507168
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1525589487}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525589488}
+  - component: {fileID: 1571507171}
+  m_Layer: 0
+  m_Name: 'silla_3 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!208 &1571507171
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -21979,11 +22165,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1607084201}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &1607084198 stripped
+--- !u!4 &1607084198
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1607084197}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490969810}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5184796, y: -0.48081058, z: -0.48080987, w: 0.5184805}
+  m_LocalPosition: {x: 3.4907794, y: 0.24101171, z: 21.557655}
+  m_LocalScale: {x: 25.996231, y: 21.877018, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1607084201
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -26000,11 +26196,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912946111}
   m_CullTransparentMesh: 1
---- !u!1 &1930651729 stripped
+--- !u!1 &1930651729
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 1213562722}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213562723}
+  - component: {fileID: 1930651732}
+  m_Layer: 0
+  m_Name: 'silla_6 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!208 &1930651732
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -27392,11 +27600,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2049014797}
   m_SourcePrefab: {fileID: 100100000, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
---- !u!4 &2031863774 stripped
+--- !u!4 &2031863774
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 2031863773}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049014794}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5103576, y: -0.48942327, z: -0.4894229, w: 0.510358}
+  m_LocalPosition: {x: 8.239121, y: 0.24101171, z: 21.307703}
+  m_LocalScale: {x: 25.9992, y: 21.87436, z: 37.632317}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046629158
 GameObject:
   m_ObjectHideFlags: 0
@@ -27522,11 +27740,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046909490}
   m_CullTransparentMesh: 0
---- !u!1 &2049014794 stripped
+--- !u!1 &2049014794
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1140309440517377582, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 2031863773}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2031863774}
+  - component: {fileID: 2049014797}
+  m_Layer: 0
+  m_Name: 'silla_9 (Missing Prefab with guid: b36d7818294a549409b9887e24f7b1ef)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!208 &2049014797
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -29317,11 +29547,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
---- !u!1 &114994200544600472 stripped
+--- !u!1 &114994200544600472
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7076361436936412571, guid: 1aea4acf3cd223a43b69bc486d299b78, type: 3}
   m_PrefabInstance: {fileID: 128694402686517466}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2855761331868045917}
+  - component: {fileID: 5219358259084193689}
+  m_Layer: 0
+  m_Name: 'Mesa_1 (Missing Prefab with guid: 1aea4acf3cd223a43b69bc486d299b78)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &124431660597829265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38410,11 +38652,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &2855761331868045917 stripped
+--- !u!4 &2855761331868045917
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 6802783542975933521, guid: 1aea4acf3cd223a43b69bc486d299b78, type: 3}
   m_PrefabInstance: {fileID: 128694402686517466}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114994200544600472}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071067, y: -0.00000016858738, z: -0.00000016858738, w: 0.7071068}
+  m_LocalPosition: {x: 0.29900014, y: 0.66482663, z: 4.2241316}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 408389099}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &2855923860967291945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -51994,11 +52246,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8069329524168771828 stripped
+--- !u!4 &8069329524168771828
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7959231253324467383, guid: b36d7818294a549409b9887e24f7b1ef, type: 3}
   m_PrefabInstance: {fileID: 584573850532415791}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071067, y: -0.00000016858738, z: -0.00000016858738, w: 0.7071068}
+  m_LocalPosition: {x: 7.3389997, y: 0.24101171, z: 19.415596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1284787017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8082471361860586650
 PrefabInstance:
   m_ObjectHideFlags: 0
