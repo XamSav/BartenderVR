@@ -10,26 +10,28 @@ public class Customer : MonoBehaviour
     public Vector3 spawnPosition; // Posición de la barra
     public float moveSpeed = 2f; // Velocidad de movimiento
     //Nube
-    public SpriteRenderer thoughtBubble; // Burbuja de pensamiento
+    //public SpriteRenderer thoughtBubble; // Burbuja de pensamiento
     public Image cocktailImageUI; // Imagen del cóctel
 
     public CocktailRecipe requestedCocktail; //Pedido del cliente
     [SerializeField]private float patienceTime = 20f; // Tiempo antes de irse
     private byte indexPos;
-    private bool isWaiting = false;
-    private bool isLeaving = false;
+    [SerializeField] private bool isWaiting = false;
+    [SerializeField] private bool isLeaving = false;
     private NavMeshAgent navMeshAgent;
-
+    private Animator _anim;
     void Start()
     {
         spawnPosition = transform.position;
         navMeshAgent = GetComponent<NavMeshAgent>();
+        _anim = GetComponent<Animator>();
         navMeshAgent.destination = targetPosition.position;
     }
     private void Update()
     {
-        if(Vector3.Distance(transform.position, targetPosition.position) < 0.1f && !isWaiting && !isLeaving)
+        if(Vector3.Distance(transform.position, targetPosition.position) < 0.3f && !isWaiting && !isLeaving)
         {
+            _anim.SetTrigger("Salute");
             StartCoroutine(WaitForDrink());
         }
     }
@@ -37,7 +39,7 @@ public class Customer : MonoBehaviour
     {
         requestedCocktail = cocktail;
         cocktailImageUI.sprite = cocktail.cocktailImage; // Imagen del pedido
-        thoughtBubble.gameObject.SetActive(true); // Mostrar la burbuja de pensamiento
+        //thoughtBubble.gameObject.SetActive(true); // Mostrar la burbuja de pensamiento
     }
 
     IEnumerator WaitForDrink()
@@ -47,7 +49,7 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(patienceTime);
         if (isWaiting && !isLeaving)
         {
-            Leave(false); // Cliente se va enojado
+            StartCoroutine(PlayAnimationAndLeave("Sad", false)); // Cliente se va enojado
         }
     }
     public void ReceiveDrink(GlassContent glass)
@@ -72,12 +74,12 @@ public class Customer : MonoBehaviour
         if(result == 3)
         {
             Debug.Log("Cliente satisfecho");
-            Leave(true);
+            StartCoroutine(PlayAnimationAndLeave("Happy", true));
         }
         else
         {
             Debug.Log("Cliente insatisfecho");
-            Leave(false);
+            StartCoroutine(PlayAnimationAndLeave("Sad", false));
         }
     }
     
@@ -85,12 +87,19 @@ public class Customer : MonoBehaviour
     {
         indexPos = index;
     }
+    private IEnumerator PlayAnimationAndLeave(string animationTrigger, bool happy)
+    {
+        _anim.SetTrigger(animationTrigger);
+        isWaiting = false;
+        isLeaving = true;
+        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length); // Esperar a que termine la animación
+        Leave(happy);
+    }
     void Leave(bool happy)
     {
-        isLeaving = true;
-        isWaiting = false;
+        _anim.SetTrigger("Sad");//Next Happy
         navMeshAgent.destination = spawnPosition;
-        thoughtBubble.gameObject.SetActive(false);
+        //thoughtBubble.gameObject.SetActive(false);
         Debug.Log(happy ? "El cliente se va feliz." : "El cliente se va molesto.");
         GameManager.instance.CustomerLeave(indexPos);
         Destroy(gameObject, 5f); // Destruir el cliente después de 2 segundos

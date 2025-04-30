@@ -11,6 +11,8 @@ TagManager:
   - ShakerTop
   - Strainer
   - CocktailGlass
+  - Drink
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - PlacementZone
   - Water
   - UI
-  - 
+  - Instanciable
   - 
   - 
   - 

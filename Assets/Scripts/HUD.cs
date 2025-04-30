@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
-
     [Header("Tiempo")]
     [SerializeField] private TMP_Text _clock;
     [Header("Money")]
@@ -39,7 +38,6 @@ public class HUD : MonoBehaviour
             Transform button = Instantiate(_prefabRecipeIMG, _cocktailsContent.transform).transform.GetChild(0);
             Image image = button.GetComponent<Button>().targetGraphic.GetComponent<Image>();
             image.sprite = cocktail.cocktailImage;
-            Debug.Log("Antes de asignar la funcion");
             byte index = i;
             button.GetComponent<Button>().onClick.AddListener(delegate { ShowRecipe(index); });
             i++;
@@ -53,7 +51,6 @@ public class HUD : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        Debug.Log("Cocktail ID: " + id_cocktail);
         _titleRecipe.text = _cocktails[id_cocktail].cocktailName;
         foreach(IngredientData ingredient in _cocktails[id_cocktail].ingredients)
         {

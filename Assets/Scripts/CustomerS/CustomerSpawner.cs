@@ -7,7 +7,7 @@ using UnityEngine;
 public class CustomerSpawner : MonoBehaviour
 {
     //UNO DE TEST -> HACER ARRAY
-    public GameObject customerPrefab; // Prefabs del cliente
+    public GameObject[] customerPrefab; // Prefabs del cliente
     public Transform spawnPoint; // Posición donde aparece el cliente
     public Transform[] barPosition; // Punto donde el cliente se detiene
     public List<CocktailRecipe> cocktailMenu; // Lista de cócteles posibles
@@ -35,8 +35,7 @@ public class CustomerSpawner : MonoBehaviour
 
     void SpawnCustomer()
     {
-        //HACER RANDOM PREFAB
-        GameObject newCustomer = Instantiate(customerPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject newCustomer = Instantiate(customerPrefab[Random.Range(0, customerPrefab.Length)], spawnPoint.position, Quaternion.identity);
         activeCustomers.Add(newCustomer);
         Customer customerScript = newCustomer.GetComponent<Customer>();
 
@@ -53,12 +52,12 @@ public class CustomerSpawner : MonoBehaviour
                 }
             }
             row[nRow]++;
+            //POSIBLE MEJORA
             //PONER MAS TRANSFORMS PARA HACER COLA
             customerScript.targetPosition = barPosition[nRow];
             customerScript.SetIndexPos(nRow);
             CocktailRecipe randomCocktail = cocktailMenu[Random.Range(0, cocktailMenu.Count)];
             customerScript.SetOrder(randomCocktail);
-
         }
     }
     public void CustomerLeave(byte indexPos)

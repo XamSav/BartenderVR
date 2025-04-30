@@ -1,9 +1,124 @@
 fileFormatVersion: 2
-guid: e57f034a8d4926d44aa2f64fbe8e342b
+guid: af10bef9322b76d4f969947ff3b37f55
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exit
+    second: {fileID: 2100000, guid: 89e0caef9770dac47baf76eefbd76723, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 2b01a44fceb7d0c46b7c4f0452837408, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 952d093d552a7ca4e883a52ba5d9366d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: c511c46b1a039c64c9edfa4dd560238a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: armario
+    second: {fileID: 2100000, guid: 156925e77eb78674ab93cc555462edbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barra
+    second: {fileID: 2100000, guid: 615334554ab3b8147ad4f71aaad87f82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bobilla
+    second: {fileID: 2100000, guid: 852fff107fcec434c85b2c5ba4ab4bdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cuadro
+    second: {fileID: 2100000, guid: e4a74bc194e7a654fb3333e583e5ef98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: foto
+    second: {fileID: 2100000, guid: 03ad9b90394b73b4d8d6735a6e05ce82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: luz
+    second: {fileID: 2100000, guid: 37aa53f6757d1e6428f8a756a2f50dbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: messa
+    second: {fileID: 2100000, guid: c048103484f379a4ca50c5812e43f84b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared
+    second: {fileID: 2100000, guid: 2e697d47cb319a442832c90bfc311260, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared.001
+    second: {fileID: 2100000, guid: 5fc40c35b1cabdb4590351e7980339c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared.005
+    second: {fileID: 2100000, guid: 2993e3be453aaaf45bae64408561d932, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared.006
+    second: {fileID: 2100000, guid: 826ebea7415e5364d90b07c3db873950, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared.007
+    second: {fileID: 2100000, guid: 3026ef7edc4416240bd69f52213f4f69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared.008
+    second: {fileID: 2100000, guid: bcf2f337cfa42524aba800bfe2aa46aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: puerta
+    second: {fileID: 2100000, guid: 5e555924aaf62ca4f96aa64c7002668e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silla
+    second: {fileID: 2100000, guid: 65e98f7b36346664d993c7d2249b2bbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suelo
+    second: {fileID: 2100000, guid: d6c32424e7298e448b04521ac93999bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suelo.001
+    second: {fileID: 2100000, guid: 9156404bd5cbb254497e7a629ef723a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suelo.003
+    second: {fileID: 2100000, guid: 755e0d5f34b61fc4cbfcf87be2249aec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: taburetes.001
+    second: {fileID: 2100000, guid: 96451a49b86173642898655ddd236349, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -7,7 +7,8 @@ public class ContentUI : MonoBehaviour
     [SerializeField] private Transform _content;
     [SerializeField] private GameObject _card;
     private List<IngredientData> _ingredients = new List<IngredientData>();
-    private void Start()
+
+    private void Awake()
     {
         _parent = transform.parent;
         try
