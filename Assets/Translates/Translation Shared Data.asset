@@ -56,25 +56,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6334734094336
-    m_Key: Chairs
+    m_Key: Sillas
     m_Metadata:
       m_Items: []
   - m_Id: 6441420410880
-    m_Key: Tables
+    m_Key: Mesas
     m_Metadata:
       m_Items: []
   - m_Id: 6759583535104
-    m_Key: Lamps
+    m_Key: Lamparas
     m_Metadata:
       m_Items: []
   - m_Id: 6868253757440
-    m_Key: 'Bottles
-
-'
+    m_Key: Taburetes
     m_Metadata:
       m_Items: []
   - m_Id: 7417732747264
-    m_Key: Level
+    m_Key: Nivel
     m_Metadata:
       m_Items: []
   - m_Id: 16685919850496

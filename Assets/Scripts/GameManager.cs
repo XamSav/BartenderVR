@@ -1,30 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Managers")]
     [SerializeField] private HUD hud;
     [Header("Puntuacion")]
-    private byte _reputation = 100;
-    private int playerMoney = 100;
+    //private byte _reputation = 100;
+    private int playerMoney = 101;
     [Header("Tiempo")]
-    [SerializeField] private int _maxTime = 100;
     private float _currentTime = 0;
-    [Header("Estado de la partida")]
-    [SerializeField]private bool _isPlaying = true;
-    [Header("Contenido Del Vaso")]
-    [SerializeField] private Transform _parentCards;
-    [SerializeField] private GameObject _cardMl;
     [Header("Evaluacion")]
     [SerializeField] private CocktailEvaluator cocktailEvaluator;
     [SerializeField] private CustomerSpawner customerSpawner;
 
-    private List<Card> cards = new List<Card>();
+    //private List<Card> cards = new List<Card>();
     public static GameManager instance;
-
-    
 
     private void Start()
     {
@@ -39,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         _currentTime += Time.deltaTime;
     }
-    public void AddLiquid(string liquid, float ml)
+    /*public void AddLiquid(string liquid, float ml)
     {
         foreach(Card item in cards)
         {
@@ -56,7 +49,7 @@ public class GameManager : MonoBehaviour
         camps[0].text = ($"{liquid}: ");
         camps[1].text = ($"{ml:F2}ml");
         cards.Add(new Card { liquid = liquid,ml = ml, mlText = camps[1] });
-    }
+    }*/
     public void CustomerLeave(byte indexPos)
     {
         customerSpawner.CustomerLeave(indexPos);
@@ -66,7 +59,12 @@ public class GameManager : MonoBehaviour
         int result = cocktailEvaluator.EvaluateCocktail(glass, customer);
         return result;
     }
-
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Next Level");
+    }
+    #region Encapsulaciones
     public float GetTime()
     {
         return _currentTime;
@@ -85,9 +83,11 @@ public class GameManager : MonoBehaviour
         playerMoney -= cost;
         UpdateUI();
     }
+    #endregion
     private void UpdateUI()
     {
         hud.UpdateMoney(playerMoney);
+        UpgradeManager.instance.UpdateMoney(playerMoney);
     }
     [System.Serializable]
     public class Card

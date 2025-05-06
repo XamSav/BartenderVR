@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36846cef9fc5c9c4083a62f13a4253b5, type: 3}
   m_Name: Lamparas
   m_EditorClassIdentifier: 
-  cost: 0
-  upgradedPrefab: []
+  cost: 50
+  upgradedPrefab:
+  - {fileID: 7207369214563103633, guid: d7d1e831c94b8ba4abf78b3d7bc96ce4, type: 3}
+  - {fileID: 7757472490854941446, guid: e576649c3e030db41a4895a2bbd393d8, type: 3}
+  - {fileID: 7578250777290496143, guid: f6b3640b93c289b4a831254d1711b956, type: 3}

@@ -40,7 +40,7 @@ public class ObjectGenerator : MonoBehaviour
         {
             if (collider.CompareTag("Drink"))
             {
-                Debug.Log($"Objeto detectado al inicio: {collider.name}");
+                //Debug.Log($"Objeto detectado al inicio: {collider.name}");
                 lastPos = collider.transform.parent.position;
                 lastRotation = collider.transform.parent.rotation;
                 pool.Add(collider.gameObject);

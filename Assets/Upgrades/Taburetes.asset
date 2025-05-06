@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36846cef9fc5c9c4083a62f13a4253b5, type: 3}
+  m_Name: Taburetes
+  m_EditorClassIdentifier: 
+  cost: 50
+  upgradedPrefab:
+  - {fileID: 4015238055754505618, guid: 6d5d6a55b66922d4d885836845534303, type: 3}
+  - {fileID: 2010033940113445901, guid: 8d1ea63cde623aa4fbbb60f88cfb7d9a, type: 3}
+  - {fileID: 8948456539348185854, guid: 53871e114d306144e8a0ded5bc35b55c, type: 3}

@@ -17,7 +17,7 @@ public class HeightAdjuster : MonoBehaviour
         heightSlider.onValueChanged.AddListener(AdjustHeight);
     }
 
-    void AdjustHeight(float newHeight)
+    public void AdjustHeight(float newHeight)
     {
         cameraOffset.localPosition = new Vector3(0, newHeight, 0);
     }

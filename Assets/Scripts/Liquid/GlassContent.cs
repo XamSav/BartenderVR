@@ -55,11 +55,6 @@ public class GlassContent : MonoBehaviour
                 AddIngredient(liquid);
             }
         }
-        else if (col.gameObject.CompareTag("Ground"))
-        {
-            ClearContents();
-            gameObject.SetActive(false);
-        }
     }
 
     void AddIngredient(LiquidSource liquid)
