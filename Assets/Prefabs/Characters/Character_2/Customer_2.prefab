@@ -1141,7 +1141,7 @@ MonoBehaviour:
   moveSpeed: 2
   cocktailImageUI: {fileID: 2319214893406940151}
   requestedCocktail: {fileID: 0}
-  patienceTime: 2
+  patienceTime: 10
   isWaiting: 0
   isLeaving: 0
 --- !u!195 &1585467244009352367

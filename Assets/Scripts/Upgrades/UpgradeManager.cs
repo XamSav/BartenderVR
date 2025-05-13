@@ -98,8 +98,6 @@ public class UpgradeManager : MonoBehaviour
                     Button but = buttonParent.GetChild(1).GetComponent<Button>();
                     if (but != null)
                     {
-                        Debug.Log("Interactable:");
-                        Debug.Log(money >= upgrades[i].upgradeData.cost);
                         but.interactable = money >= upgrades[i].upgradeData.cost; // Activar o desactivar el botón según el dinero
                     }
                 }

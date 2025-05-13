@@ -4,7 +4,7 @@ public class Botle : MonoBehaviour
 {
     [SerializeField][Range(20, 180)] private float tiltThreshold = 60f;
     public bool isPouring = false;
-    private GameObject _liquidParticles;
+    [SerializeField]private GameObject _liquidParticles;
 
     private void Start()
     {
@@ -44,7 +44,9 @@ public class Botle : MonoBehaviour
     void StartPouring()
     {
         isPouring = true;
+        Debug.Log("Botella en posición inclinada, iniciando vertido.");
         _liquidParticles.SetActive(true);
+        _liquidParticles.gameObject.GetComponent<ParticleSystem>().Play();
     }
 
     void StopPouring()
@@ -52,6 +54,7 @@ public class Botle : MonoBehaviour
         isPouring = false;
         Debug.Log("Botella en posición normal, deteniendo vertido.");
         _liquidParticles.SetActive(false);
+        _liquidParticles.gameObject.GetComponent<ParticleSystem>().Stop();
     }
 
     private void OnCollisionEnter(Collision col)

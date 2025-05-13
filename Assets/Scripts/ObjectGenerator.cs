@@ -11,7 +11,7 @@ public class ObjectGenerator : MonoBehaviour
     private Vector3 lastPos;
     private Quaternion lastRotation;
     private BoxCollider boxCollider;
-
+    private bool spawning = false;
 
     private void Start()
     {
@@ -24,7 +24,16 @@ public class ObjectGenerator : MonoBehaviour
     {
         if (other.CompareTag("Drink"))
         {
-            GetFromPool();
+            Rigidbody rb = other.transform.GetComponentInParent<Rigidbody>();
+            if(rb != null)
+            {
+                rb.isKinematic = false; // Hacer que el objeto no sea cinemático
+            }
+            if (!spawning)
+            {
+                spawning = true;
+                Invoke("GetFromPool", 2f);
+            }
         }
     }
     private void DetectObjectsInsideTrigger()
@@ -40,13 +49,14 @@ public class ObjectGenerator : MonoBehaviour
         {
             if (collider.CompareTag("Drink"))
             {
-                //Debug.Log($"Objeto detectado al inicio: {collider.name}");
                 lastPos = collider.transform.parent.position;
+                lastPos.y += 0f; // Ajustar la posición Y para que esté por encima del objeto
                 lastRotation = collider.transform.parent.rotation;
                 pool.Add(collider.gameObject);
             }
         }
     }
+    
     //POOL MANAGEMENT
     #region Pool
     private void InitializePool()
@@ -58,24 +68,35 @@ public class ObjectGenerator : MonoBehaviour
             pool.Add(obj);
         }
     }
-    private GameObject GetFromPool()
+    private void GetFromPool()
     {
+        // Buscar un objeto inactivo
         foreach (GameObject obj in pool)
         {
-            if (!obj.activeSelf) // Buscar un objeto inactivo en la piscina
+            if (!obj.activeSelf)
             {
-                obj.SetActive(true);
+                Rigidbody rb = obj.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                    rb.isKinematic = true; // Para que no se mueva hasta ser agarrada
+                }
                 obj.transform.position = lastPos;
                 obj.transform.rotation = lastRotation;
-                return obj;
+                obj.SetActive(true);
+                spawning = false;
+                return; // ¡Salimos después de activar uno!
             }
         }
 
-        // Si no hay objetos disponibles, instanciar uno nuevo (opcional)
+        // Si no se encontró ninguno disponible, instanciar uno nuevo
         GameObject newObj = Instantiate(objetoPrefab, lastPos, lastRotation);
         newObj.transform.SetParent(transform);
         pool.Add(newObj);
-        return newObj;
+
+        spawning = false;
     }
+
     #endregion
 }

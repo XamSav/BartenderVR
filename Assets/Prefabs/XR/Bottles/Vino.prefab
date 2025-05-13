@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiltThreshold: 60
   isPouring: 0
+  _liquidParticles: {fileID: 0}
 --- !u!1 &2981934708472384836
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +252,10 @@ PrefabInstance:
     - target: {fileID: 461301346335575185, guid: 173d41fd672d60848b60aba510ad3d46, type: 3}
       propertyPath: m_Name
       value: Vino
+      objectReference: {fileID: 0}
+    - target: {fileID: 461301346335575185, guid: 173d41fd672d60848b60aba510ad3d46, type: 3}
+      propertyPath: m_TagString
+      value: Drink
       objectReference: {fileID: 0}
     - target: {fileID: 1012697129482352939, guid: 173d41fd672d60848b60aba510ad3d46, type: 3}
       propertyPath: m_LocalPosition.x

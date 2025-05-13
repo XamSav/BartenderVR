@@ -54,6 +54,7 @@ public class Customer : MonoBehaviour
     }
     public void ReceiveDrink(GlassContent glass)
     {
+        isWaiting = false;
         int result = GameManager.instance.CheckCocktail(glass, requestedCocktail);
         switch (result)
         {
@@ -89,18 +90,15 @@ public class Customer : MonoBehaviour
     }
     private IEnumerator PlayAnimationAndLeave(string animationTrigger, bool happy)
     {
-        _anim.SetTrigger(animationTrigger);
+        _anim.SetTrigger(animationTrigger);//Happy - Sad
         isWaiting = false;
         isLeaving = true;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length); // Esperar a que termine la animación
-        Leave(happy);
+        Leave();
     }
-    void Leave(bool happy)
+    void Leave()
     {
-        _anim.SetTrigger("Sad");//Next Happy
         navMeshAgent.destination = spawnPosition;
-        //thoughtBubble.gameObject.SetActive(false);
-        Debug.Log(happy ? "El cliente se va feliz." : "El cliente se va molesto.");
         GameManager.instance.CustomerLeave(indexPos);
         Destroy(gameObject, 5f); // Destruir el cliente después de 2 segundos
     }

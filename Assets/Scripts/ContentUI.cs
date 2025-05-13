@@ -1,19 +1,23 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class ContentUI : MonoBehaviour
 {
     private Transform _parent;
     [SerializeField] private Transform _content;
     [SerializeField] private GameObject _card;
+    [SerializeField] private Slider _slider;
     private List<IngredientData> _ingredients = new List<IngredientData>();
+    private GlassContent _glassContent;
 
     private void Awake()
     {
         _parent = transform.parent;
         try
         {
-            _parent.GetComponent<GlassContent>().SetContentUI(this);
+            _glassContent = _parent.GetComponent<GlassContent>();
+            _glassContent.SetContentUI(this);
         }
         catch
         {
@@ -24,7 +28,10 @@ public class ContentUI : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
+    private void Update()
+    {
+        _slider.value = _glassContent.GetCurrentVolume();
+    }
     public void UpdateUI(LiquidSource liquid)
     {
         if (_ingredients.Count == 0)
@@ -62,7 +69,7 @@ public class ContentUI : MonoBehaviour
     {
         foreach(Transform child in _content)
         {
-            Destroy(child);
+            Destroy(child.gameObject);
         }
         gameObject.SetActive(false);
     }

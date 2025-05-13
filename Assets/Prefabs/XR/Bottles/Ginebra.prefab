@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiltThreshold: 60
   isPouring: 0
+  _liquidParticles: {fileID: 0}
 --- !u!1 &6579872170437657196
 GameObject:
   m_ObjectHideFlags: 0

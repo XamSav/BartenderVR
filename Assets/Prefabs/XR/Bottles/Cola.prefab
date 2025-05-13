@@ -240,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiltThreshold: 60
   isPouring: 0
+  _liquidParticles: {fileID: 0}
 --- !u!1 &8855825920326669349
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +255,7 @@ GameObject:
   - component: {fileID: 1239305908199101780}
   m_Layer: 0
   m_Name: Cola
-  m_TagString: Untagged
+  m_TagString: Drink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2940150092614533261, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.445
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 2940150092614533261, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
       propertyPath: m_LocalPosition.z
