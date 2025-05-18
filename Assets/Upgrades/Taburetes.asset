@@ -15,5 +15,5 @@ MonoBehaviour:
   cost: 50
   upgradedPrefab:
   - {fileID: 4015238055754505618, guid: 6d5d6a55b66922d4d885836845534303, type: 3}
-  - {fileID: 2010033940113445901, guid: 8d1ea63cde623aa4fbbb60f88cfb7d9a, type: 3}
+  - {fileID: 201118583652909629, guid: edc961601b215ab428c9a7f62bed1acc, type: 3}
   - {fileID: 8948456539348185854, guid: 53871e114d306144e8a0ded5bc35b55c, type: 3}
