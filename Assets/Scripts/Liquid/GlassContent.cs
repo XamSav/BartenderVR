@@ -1,18 +1,38 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class GlassContent : MonoBehaviour
 {
+    private XRGrabInteractable grab;
     public List<IngredientData> ingredients = new List<IngredientData>(); // Lista de ingredientes en el vaso
     public float maxCapacity = 300f;
     private float currentVolume = 0f;
     private ContentUI _contentUI;
     [SerializeField] private bool hasStrainer = false; // Variable para indicar si el vaso tiene colador
+    private void Awake()
+    {
+        grab = GetComponent<XRGrabInteractable>();
+        grab.selectExited.AddListener(OnRelease);
+    }
     private void Start()
     {
-        if(ingredients.Count == 0)
-        {
-            _contentUI.gameObject.SetActive(false);
-        }
+        Inizialice();
+    }
+    //When is Avtivated clear ingredients list
+    private void OnEnable()
+    {
+        Inizialice();
+    }
+    private void OnDisable()
+    {
+        ClearContents();
+    }
+    private void Inizialice()
+    {
+        //Clear ingredients list
+        ingredients.Clear();
+        currentVolume = 0f;
     }
     private void OnParticleCollision(GameObject other)
     {
@@ -60,7 +80,6 @@ public class GlassContent : MonoBehaviour
     void AddIngredient(LiquidSource liquid)
     {
         if (currentVolume + liquid.flowRate > maxCapacity) return; //Vaso lleno
-        //Derramar
 
         // Buscar si ya existe el ingrediente en la mezcla
         bool found = false;
@@ -75,7 +94,7 @@ public class GlassContent : MonoBehaviour
         }
         if (!found)
         {
-            ingredients.Add(new IngredientData { ingredientName = liquid.ingredientName, amount = liquid.flowRate });
+            ingredients.Add(new IngredientData { ingredientName = liquid.ingredientName, amount = liquid.flowRate, color = liquid.color });
         }
         currentVolume += liquid.flowRate;
         if(!_contentUI.gameObject.activeInHierarchy)
@@ -120,5 +139,12 @@ public class GlassContent : MonoBehaviour
         _contentUI = content;
     }
 
+    private void OnRelease(SelectExitEventArgs args)
+    {
 
+    }
+    private void OnDestroy()
+    {
+        grab.selectExited.RemoveListener(OnRelease);
+    }
 }

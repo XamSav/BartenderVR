@@ -18,13 +18,16 @@ public class Customer : MonoBehaviour
     private byte indexPos;
     [SerializeField] private bool isWaiting = false;
     [SerializeField] private bool isLeaving = false;
+    private TimerIndicator timerIndicator;
     private NavMeshAgent navMeshAgent;
     private Animator _anim;
     void Start()
     {
         spawnPosition = transform.position;
         navMeshAgent = GetComponent<NavMeshAgent>();
+        timerIndicator = GetComponent<TimerIndicator>();
         _anim = GetComponent<Animator>();
+        timerIndicator.totalTime = patienceTime;
         navMeshAgent.destination = targetPosition.position;
     }
     private void Update()
@@ -38,6 +41,7 @@ public class Customer : MonoBehaviour
     public void SetOrder(CocktailRecipe cocktail)
     {
         requestedCocktail = cocktail;
+        cocktailImageUI.gameObject.SetActive(true); // Mostrar la imagen del cóctel
         cocktailImageUI.sprite = cocktail.cocktailImage; // Imagen del pedido
         //thoughtBubble.gameObject.SetActive(true); // Mostrar la burbuja de pensamiento
     }
@@ -46,7 +50,9 @@ public class Customer : MonoBehaviour
     {
         isWaiting = true;
         targetPosition.GetComponentInChildren<DeliveryZone>().SetCustomer(this);
+        timerIndicator.StartTimer();
         yield return new WaitForSeconds(patienceTime);
+        GetComponent<TimerIndicator>().isWaiting = false;
         if (isWaiting && !isLeaving)
         {
             StartCoroutine(PlayAnimationAndLeave("Sad", false)); // Cliente se va enojado
@@ -90,16 +96,53 @@ public class Customer : MonoBehaviour
     }
     private IEnumerator PlayAnimationAndLeave(string animationTrigger, bool happy)
     {
-        _anim.SetTrigger(animationTrigger);//Happy - Sad
+        cocktailImageUI.gameObject.SetActive(false); // Esconder imagen
         isWaiting = false;
         isLeaving = true;
-        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length); // Esperar a que termine la animación
+
+        _anim.SetTrigger(animationTrigger);
+
+        // Esperar hasta que la animación empiece
+        yield return new WaitUntil(() =>
+            _anim.GetCurrentAnimatorStateInfo(0).IsName(animationTrigger)
+        );
+
+        // Esperar a que termine la animación
+        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
+        StartCoroutine(RotateThenLeave());
+
+        //Leave();
+    }
+    IEnumerator RotateThenLeave()
+    {
+        Vector3 direction = (spawnPosition - transform.position).normalized;
+        direction.y = 0f;
+        if (direction == Vector3.zero)
+            yield break;
+
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        float t = 0f;
+        float duration = 0.5f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, t);
+            yield return null;
+        }
+
         Leave();
     }
+
+
     void Leave()
     {
         navMeshAgent.destination = spawnPosition;
         GameManager.instance.CustomerLeave(indexPos);
         Destroy(gameObject, 5f); // Destruir el cliente después de 2 segundos
+    }
+    public bool IsWaiting()
+    {
+        return isWaiting;
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7581998638151127522}
   - component: {fileID: 1561355977120351210}
   - component: {fileID: 898873196447580484}
+  - component: {fileID: -4025937782843266688}
   m_Layer: 0
   m_Name: Vino
   m_TagString: Untagged
@@ -210,6 +211,18 @@ MonoBehaviour:
   tiltThreshold: 60
   isPouring: 0
   _liquidParticles: {fileID: 0}
+--- !u!114 &-4025937782843266688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167037064297140736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becaf78bc681f1a48a7ccd84fdc325cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2981934708472384836
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +401,22 @@ PrefabInstance:
     - target: {fileID: 2940150092614533261, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.b
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.g
+      value: 0.18431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.r
+      value: 0.44705883
       objectReference: {fileID: 0}
     - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
       propertyPath: ingredientName

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class ObjectGenerator : MonoBehaviour
@@ -22,13 +21,13 @@ public class ObjectGenerator : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Drink"))
+        if (other.CompareTag("Drink") || other.CompareTag("CocktailGlass"))
         {
             Rigidbody rb = other.transform.GetComponentInParent<Rigidbody>();
-            if(rb != null)
+            /*if(rb != null)
             {
                 rb.isKinematic = false; // Hacer que el objeto no sea cinemático
-            }
+            }*/
             if (!spawning)
             {
                 spawning = true;
@@ -47,7 +46,7 @@ public class ObjectGenerator : MonoBehaviour
 
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Drink"))
+            if (collider.CompareTag("Drink") || collider.CompareTag("CocktailGlass"))
             {
                 lastPos = collider.transform.parent.position;
                 lastPos.y += 0f; // Ajustar la posición Y para que esté por encima del objeto
@@ -80,7 +79,7 @@ public class ObjectGenerator : MonoBehaviour
                 {
                     rb.linearVelocity = Vector3.zero;
                     rb.angularVelocity = Vector3.zero;
-                    rb.isKinematic = true; // Para que no se mueva hasta ser agarrada
+                    //rb.isKinematic = true; // Para que no se mueva hasta ser agarrada
                 }
                 obj.transform.position = lastPos;
                 obj.transform.rotation = lastRotation;

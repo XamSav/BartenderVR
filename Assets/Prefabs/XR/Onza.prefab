@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4085582097260678953}
   - component: {fileID: 2283489220156411102}
   - component: {fileID: 5223075712387374030}
+  - component: {fileID: 350852143257790486}
   m_Layer: 0
   m_Name: Onza
   m_TagString: MixingGlass
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8735050520345938281}
@@ -227,6 +228,18 @@ MonoBehaviour:
   tiltThreshold: 60
   isPouring: 0
   _liquidParticles: {fileID: 0}
+--- !u!114 &350852143257790486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130818111327770327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becaf78bc681f1a48a7ccd84fdc325cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7540936844424593360
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,9 +450,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4487097266402648323}
     m_Modifications:
+    - target: {fileID: 398814674371747929, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 398814674371747929, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 529593873419486207, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
+      propertyPath: m_text
+      value: Onza
+      objectReference: {fileID: 0}
     - target: {fileID: 529593873419486207, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
       propertyPath: m_fontSize
-      value: 22.05
+      value: 44.75
       objectReference: {fileID: 0}
     - target: {fileID: 3512417680515347521, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
       propertyPath: m_AnchorMax.x

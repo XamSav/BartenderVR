@@ -44,7 +44,6 @@ public class Botle : MonoBehaviour
     void StartPouring()
     {
         isPouring = true;
-        Debug.Log("Botella en posición inclinada, iniciando vertido.");
         _liquidParticles.SetActive(true);
         _liquidParticles.gameObject.GetComponent<ParticleSystem>().Play();
     }
@@ -52,20 +51,9 @@ public class Botle : MonoBehaviour
     void StopPouring()
     {
         isPouring = false;
-        Debug.Log("Botella en posición normal, deteniendo vertido.");
         _liquidParticles.SetActive(false);
         _liquidParticles.gameObject.GetComponent<ParticleSystem>().Stop();
     }
 
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("Ground"))
-        {
-            if(transform.GetComponent<GlassContent>() != null)
-            {
-                transform.GetComponent<GlassContent>().ClearContents();
-            }
-            gameObject.SetActive(false);
-        }
-    }
+    
 }

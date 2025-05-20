@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6814059496777961689}
   - component: {fileID: 643504502643373981}
   - component: {fileID: 6204264312636554887}
+  - component: {fileID: 8384258898603036279}
   m_Layer: 0
   m_Name: Cola
   m_TagString: Untagged
@@ -240,7 +241,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiltThreshold: 60
   isPouring: 0
-  _liquidParticles: {fileID: 0}
+  _liquidParticles: {fileID: 3766481399467503248}
+--- !u!114 &8384258898603036279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559069590442958383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becaf78bc681f1a48a7ccd84fdc325cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8855825920326669349
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +417,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.b
+      value: 0.14117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.g
+      value: 0.1882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.r
+      value: 0.23529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: ingredientName
+      value: Cola
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -412,5 +445,10 @@ PrefabInstance:
 --- !u!4 &298033779956734933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2940150092614533261, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+  m_PrefabInstance: {fileID: 3237902084061551448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3766481399467503248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1777351934313510344, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
   m_PrefabInstance: {fileID: 3237902084061551448}
   m_PrefabAsset: {fileID: 0}

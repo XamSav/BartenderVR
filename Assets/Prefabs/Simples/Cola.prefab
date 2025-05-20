@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3789985350070462721}
   - component: {fileID: 2055913984418922756}
   m_Layer: 0
-  m_Name: CocaCola
+  m_Name: Cola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

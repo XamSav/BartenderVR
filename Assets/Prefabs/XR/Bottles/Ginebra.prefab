@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6657508922177222069}
   - component: {fileID: 5565767953654891570}
   - component: {fileID: 7965578973519272934}
+  - component: {fileID: -7497540257854658937}
   m_Layer: 0
   m_Name: Ginebra
   m_TagString: Untagged
@@ -210,6 +211,18 @@ MonoBehaviour:
   tiltThreshold: 60
   isPouring: 0
   _liquidParticles: {fileID: 0}
+--- !u!114 &-7497540257854658937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796437097692623207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becaf78bc681f1a48a7ccd84fdc325cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6579872170437657196
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +411,22 @@ PrefabInstance:
     - target: {fileID: 5413299852569327958, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
       propertyPath: SubModule.subEmitters.Array.data[0].properties
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.b
+      value: 0.7921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
+      propertyPath: color.r
+      value: 0.8392157
       objectReference: {fileID: 0}
     - target: {fileID: 9222236782598957790, guid: ee1b4ecd8f6ac104588cf69d778c56d0, type: 3}
       propertyPath: ingredientName

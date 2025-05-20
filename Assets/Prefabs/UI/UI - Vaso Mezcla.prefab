@@ -517,7 +517,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.25
+  m_fontSize: 22.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1381543423440765538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,3 +825,5 @@ MonoBehaviour:
   _content: {fileID: 3676834979942460362}
   _card: {fileID: 8403362124390793356, guid: 00f9ad568f297814c805ca0b4037c8f9, type: 3}
   _slider: {fileID: 8789863408750007185}
+  _sliderFillImage: {fileID: 6540094875147594630}
+  _handleImage: {fileID: 5771587649978740552}

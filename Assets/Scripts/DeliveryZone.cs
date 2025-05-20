@@ -1,4 +1,3 @@
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class DeliveryZone : MonoBehaviour
@@ -12,23 +11,23 @@ public class DeliveryZone : MonoBehaviour
         cocktail = glas;
         if(cocktail.ingredients.Count > 0)
         {
-            if (waitingCustomer != null)
+            if (waitingCustomer != null && waitingCustomer.GetComponent<Customer>().IsWaiting())
             {
                 waitingCustomer.ReceiveDrink(cocktail);
                 glas.gameObject.SetActive(false); // Desactivar el cóctel 
-                _canReceive = true;
+                ClearCocktail();
             }
         }
     }
     public void SetCustomer(Customer customer)
     {
-        _canReceive = false;
+        //_canReceive = false;
         waitingCustomer = customer;
         if(cocktail != null)
         {
             waitingCustomer.ReceiveDrink(cocktail);
             cocktail.gameObject.SetActive(false); // Desactivar el cóctel 
-            _canReceive = true;
+            ClearCocktail();
         }
     }
     public bool CanReceive()
@@ -38,5 +37,11 @@ public class DeliveryZone : MonoBehaviour
     public bool HaveCoctail()
     {
         return cocktail != null;
+    }
+    public void ClearCocktail()
+    {
+        cocktail = null;
+        _canReceive = true;
+        waitingCustomer = null;
     }
 }

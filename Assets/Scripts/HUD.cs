@@ -10,16 +10,17 @@ public class HUD : MonoBehaviour
     [Header("Glass UI")]
     [SerializeField] private GameObject _parentList;
     [SerializeField] private GameObject _prefabCard;
-    [Header("Cocktail Content")]
+    [Header("Cocteles")]
+    [SerializeField] private CocktailRecipe[] _cocktails;//Imagen de los cocteles
     [SerializeField] private GameObject _cocktailsPanel;//Panel de los cocteles
     [SerializeField] private GameObject _cocktailsContent;//Panel de los cocteles
     [SerializeField] private GameObject _prefabRecipeIMG;//Prefab de la imagen de la receta
-    [Header("Recipe")]
+    [Header("Receta de Coctel")]
     [SerializeField] private GameObject _recipePanel;//Panel de la receta
     [SerializeField] private GameObject _recipeContent;//Contenido de la receta
     [SerializeField] private GameObject _prefabRecipe;//Prefab de la receta
     [SerializeField] private TMP_Text _titleRecipe;//Titulo de la receta
-    [SerializeField] private CocktailRecipe[] _cocktails;//Recetas
+    
     public static HUD instance;
     private void Start()
     {
@@ -66,7 +67,7 @@ public class HUD : MonoBehaviour
     }
     public void UpdateMoney(int money)
     {
-        _money.text = money+"$";
+        _money.text = money+"€";
     }
     public void UpdateGlass(string title, string ml)
     {
