@@ -482,7 +482,7 @@ MonoBehaviour:
   moveSpeed: 2
   cocktailImageUI: {fileID: 8160036213418603343}
   requestedCocktail: {fileID: 0}
-  patienceTime: 20
+  patienceTime: 30
   isWaiting: 0
   isLeaving: 0
 --- !u!195 &1534613933935183080
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerFillImage: {fileID: 6171778322285210189}
-  totalTime: 20
+  totalTime: 30
   isWaiting: 0
 --- !u!1 &2205311147820323319
 GameObject:

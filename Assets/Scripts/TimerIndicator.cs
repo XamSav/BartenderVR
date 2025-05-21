@@ -17,13 +17,6 @@ public class TimerIndicator : MonoBehaviour
             // Actualiza la UI
             float fillAmount = Mathf.Clamp01(currentTime / totalTime);
             timerFillImage.fillAmount = fillAmount;
-
-            // Opcional: destruir, reiniciar, etc.
-            if (currentTime <= 0)
-            {
-                Debug.Log("Tiempo terminado");
-                // Puedes reiniciar o ejecutar otra acción
-            }
         }
     }
     public void StartTimer()

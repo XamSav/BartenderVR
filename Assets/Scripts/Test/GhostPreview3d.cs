@@ -13,26 +13,34 @@ public class GhostPreview3d : MonoBehaviour
 
     [SerializeField]private GameObject heldObject;
     [SerializeField]private GameObject lastInstance;
+    [SerializeField] private LineRenderer lineRenderer;
     private bool isInstantiated = false;
 
     void OnEnable()
     {
         hand.selectExited.AddListener(OnObjectReleased);
+        if (lineRenderer != null)
+            lineRenderer.enabled = true;
     }
 
     void OnDisable()
     {
         hand.selectExited.RemoveListener(OnObjectReleased);
+        if (lineRenderer != null)
+            lineRenderer.enabled = false;
     }
 
     void Update()
     {
+        /// PONER EN LA COMPROBACION DE SI ES UN COCKTAIL GLASS   
         if (!hand.hasSelection)
         {
+            lineRenderer.enabled = false;
             CleanupPreview();
             return;
         }
-
+        lineRenderer.enabled = true;
+        UpdateRayVisual();
         if (heldObject == null)
             heldObject = hand.interactablesSelected[0].transform.GetChild(1).gameObject;
 
@@ -80,7 +88,22 @@ public class GhostPreview3d : MonoBehaviour
             renderer.material = transparentMaterial;
         }
     }
+    private void UpdateRayVisual()
+    {
+        if (lineRenderer == null) return;
 
+        Vector3 start = transform.position;
+        Vector3 end = transform.position + transform.forward * rayDistance;
+
+        if (Physics.Raycast(start, transform.forward, out RaycastHit hit, rayDistance))
+        {
+            end = hit.point;
+        }
+
+        lineRenderer.positionCount = 2;
+        lineRenderer.SetPosition(0, Vector3.zero);
+        lineRenderer.SetPosition(1, Vector3.forward*rayDistance);
+    }
     private void CleanupPreview()
     {
         if (lastInstance != null)

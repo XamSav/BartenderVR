@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -8,48 +7,30 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     [SerializeField] private HUD hud;
     [Header("Puntuacion")]
-    //private byte _reputation = 100;
-    private int playerMoney = 101;
+    private int playerMoney = 499;
     [Header("Tiempo")]
     private float _currentTime = 0;
     [Header("Evaluacion")]
     [SerializeField] private CocktailEvaluator cocktailEvaluator;
     [SerializeField] private CustomerSpawner customerSpawner;
-
-    //private List<Card> cards = new List<Card>();
     public static GameManager instance;
 
-    private void Start()
+    private void Awake()
     {
         if(instance != null && instance != this)
         {
             Destroy(this);
         }
         instance = this;
+    }
+    private void Start()
+    {
         UpdateUI();
     }
     private void Update()
     {
         _currentTime += Time.deltaTime;
     }
-    /*public void AddLiquid(string liquid, float ml)
-    {
-        foreach(Card item in cards)
-        {
-            if(item.liquid == liquid)
-            {
-                item.ml += ml;
-                item.mlText.text = ($"{item.ml:F2}ml");
-                return;
-            }
-        }
-
-        GameObject card = Instantiate(_cardMl, _parentCards);
-        TMP_Text[] camps = card.GetComponentsInChildren<TMP_Text>();
-        camps[0].text = ($"{liquid}: ");
-        camps[1].text = ($"{ml:F2}ml");
-        cards.Add(new Card { liquid = liquid,ml = ml, mlText = camps[1] });
-    }*/
     public void CustomerLeave(byte indexPos)
     {
         customerSpawner.CustomerLeave(indexPos);

@@ -21,6 +21,7 @@ public class Customer : MonoBehaviour
     private TimerIndicator timerIndicator;
     private NavMeshAgent navMeshAgent;
     private Animator _anim;
+    private GlassContent glassContent; // Contenido del vaso
     void Start()
     {
         spawnPosition = transform.position;
@@ -61,6 +62,7 @@ public class Customer : MonoBehaviour
     public void ReceiveDrink(GlassContent glass)
     {
         isWaiting = false;
+        glassContent = glass;
         int result = GameManager.instance.CheckCocktail(glass, requestedCocktail);
         switch (result)
         {
@@ -110,8 +112,9 @@ public class Customer : MonoBehaviour
         // Esperar a que termine la animación
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
         StartCoroutine(RotateThenLeave());
-
-        //Leave();
+        //Destroy Glass
+        if(glassContent != null)
+            glassContent.gameObject.SetActive(false); // Desactivar el cóctel
     }
     IEnumerator RotateThenLeave()
     {

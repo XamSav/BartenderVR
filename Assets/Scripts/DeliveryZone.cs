@@ -8,13 +8,12 @@ public class DeliveryZone : MonoBehaviour
     public void SetDrink(GlassContent glas)
     {
         _canReceive = false;
-        cocktail = glas;
-        if(cocktail.ingredients.Count > 0)
+        if(glas.ingredients.Count > 0)
         {
             if (waitingCustomer != null && waitingCustomer.GetComponent<Customer>().IsWaiting())
             {
-                waitingCustomer.ReceiveDrink(cocktail);
-                glas.gameObject.SetActive(false); // Desactivar el cóctel 
+                waitingCustomer.ReceiveDrink(glas);
+                //glas.gameObject.SetActive(false); // Desactivar el cóctel 
                 ClearCocktail();
             }
         }
@@ -26,7 +25,7 @@ public class DeliveryZone : MonoBehaviour
         if(cocktail != null)
         {
             waitingCustomer.ReceiveDrink(cocktail);
-            cocktail.gameObject.SetActive(false); // Desactivar el cóctel 
+            //cocktail.gameObject.SetActive(false); // Desactivar el cóctel 
             ClearCocktail();
         }
     }
@@ -40,7 +39,7 @@ public class DeliveryZone : MonoBehaviour
     }
     public void ClearCocktail()
     {
-        cocktail = null;
+        //cocktail = null;
         _canReceive = true;
         waitingCustomer = null;
     }

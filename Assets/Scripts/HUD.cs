@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
@@ -92,6 +93,10 @@ public class HUD : MonoBehaviour
         {
             Destroy(child);
         }
+    }
+    public void BackToMainScene()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 }

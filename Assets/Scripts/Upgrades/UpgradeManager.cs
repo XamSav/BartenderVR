@@ -7,7 +7,6 @@ using UnityEngine.Localization;
 public class UpgradeManager : MonoBehaviour
 {
     private byte MaxLevel;
-    //[SerializeField] private byte actualLevel = 1; // Max 3
     [SerializeField] private Transform _buttonsParent; // Content -> (0)Buttont Text+ (1)ButtonParent -> Button
     [SerializeField] private GameObject _buttonPrefab; 
     public static UpgradeManager instance;
@@ -36,7 +35,7 @@ public class UpgradeManager : MonoBehaviour
     private void CreateUpgradeButton(string name, byte index, int cost)
     {
         GameObject inst = Instantiate(_buttonPrefab, _buttonsParent);
-
+        int money = GameManager.instance.GetPlayerMoney();
 
         var localizeEvent = inst.transform.GetChild(0).GetComponent<LocalizeStringEvent>();
         if (localizeEvent != null)
@@ -46,7 +45,7 @@ public class UpgradeManager : MonoBehaviour
 
         Button button = inst.transform.GetChild(1).GetComponent<Button>();
         button.onClick.AddListener(() => Upgrade((byte)index));
-        button.interactable = false; // Desactivar el botón al inicio
+        button.interactable = money >= cost; // Desactivar el botón al inicio
         inst.transform.GetChild(1).GetChild(1).GetChild(1).GetComponent<TMP_Text>().text = cost.ToString() + "€";
     }
     public void Upgrade(byte item)
@@ -71,6 +70,7 @@ public class UpgradeManager : MonoBehaviour
         
         ProcessPayment(upgrades[item].upgradeData.cost);
         upgrades[item].level++;
+        upgrades[item].isUpgraded = true;
         UpgradeItems(item);
         // Actualizar el texto del botón
         Transform buttonParent = _buttonsParent.GetChild(item);
@@ -80,13 +80,11 @@ public class UpgradeManager : MonoBehaviour
             if (but != null)
             {
                 but.interactable = false; // Desactivar el botón
-                        
             }
         }
     }
     public void UpdateMoney(int money)
     {
-        Debug.Log("Money:" + money);
         for (int i = 0; i < upgrades.Length; i++)
         {
             if (!upgrades[i].isUpgraded)
@@ -122,6 +120,7 @@ public class UpgradeManager : MonoBehaviour
             Transform t = child.transform;
             Destroy(child.gameObject);
             gameObjects[i] = Instantiate(upgrades[type].upgradeData.upgradedPrefab[upgrades[type].level], t.position, t.rotation);
+            
         }
         foreach (GameObject go in gameObjects)
         {

@@ -18,7 +18,7 @@ public class CocktailEvaluator : MonoBehaviour
                 if(glassIngredient.ingredientName == recipeIngredient.ingredientName)
                 {
                     found = true;
-                    float tolerance = 5f;
+                    float tolerance = 10f;
                     if(Mathf.Abs(glassIngredient.amount - recipeIngredient.amount) > tolerance)
                     {
                         return 1;//Cantidad Incorrecta
