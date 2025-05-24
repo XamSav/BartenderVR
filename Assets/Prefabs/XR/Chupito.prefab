@@ -435,8 +435,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 2798139326599474408}
     m_Modifications:
     - target: {fileID: 529593873419486207, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
+      propertyPath: m_text
+      value: Shot Glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 529593873419486207, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
       propertyPath: m_fontSize
-      value: 22.05
+      value: 24.7
       objectReference: {fileID: 0}
     - target: {fileID: 3512417680515347521, guid: 105f180e01b0e9045b9de6493f2930ac, type: 3}
       propertyPath: m_AnchorMax.x
