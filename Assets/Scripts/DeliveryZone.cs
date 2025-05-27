@@ -25,7 +25,7 @@ public class DeliveryZone : MonoBehaviour
         if(cocktail != null)
         {
             waitingCustomer.ReceiveDrink(cocktail);
-            //cocktail.gameObject.SetActive(false); // Desactivar el cóctel 
+
             ClearCocktail();
         }
     }

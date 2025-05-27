@@ -9,7 +9,7 @@ public class HUD : MonoBehaviour
     [Header("Money")]
     [SerializeField] private TMP_Text _money;
     [Header("Glass UI")]
-    [SerializeField] private GameObject _parentList;
+    //[SerializeField] private GameObject _parentList;
     [SerializeField] private GameObject _prefabCard;
     [Header("Cocteles")]
     [SerializeField] private CocktailRecipe[] _cocktails;//Imagen de los cocteles
@@ -70,7 +70,7 @@ public class HUD : MonoBehaviour
     {
         _money.text = money+"€";
     }
-    public void UpdateGlass(string title, string ml)
+    /*public void UpdateGlass(string title, string ml)
     {
         foreach (Transform child in _parentList.transform)
         {
@@ -86,7 +86,8 @@ public class HUD : MonoBehaviour
         GameObject card = Instantiate(_prefabCard, _parentList.transform);
         card.transform.GetChild(0).GetComponent<TMP_Text>().text = title;
         card.transform.GetChild(1).GetComponent<TMP_Text>().text = ml+"ml";
-    }
+    }*/
+    /*
     public void ClearGlass()
     {
         foreach (Transform child in _parentList.transform)
@@ -94,6 +95,7 @@ public class HUD : MonoBehaviour
             Destroy(child);
         }
     }
+    */
     public void BackToMainScene()
     {
         SceneManager.LoadScene("Menu");

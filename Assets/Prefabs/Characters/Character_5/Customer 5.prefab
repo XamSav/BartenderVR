@@ -696,6 +696,7 @@ Transform:
   m_Children:
   - {fileID: 3390197480062861188}
   - {fileID: 2644446762597405663}
+  - {fileID: 7170648677172645025}
   - {fileID: 3758663233556123351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -762,6 +763,8 @@ MonoBehaviour:
   patienceTime: 30
   isWaiting: 0
   isLeaving: 0
+  moneyPopupPrefab: {fileID: 6291937927097627069, guid: 925feb6e850c4194cb51d426cf360b33, type: 3}
+  moneyPopupSpawnPoint: {fileID: 7170648677172645025}
 --- !u!195 &5463363655226808536
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1161,6 +1164,37 @@ Transform:
   - {fileID: 871864744419686493}
   m_Father: {fileID: 895219536572053197}
   m_LocalEulerAnglesHint: {x: -0.49794632, y: 0.2547549, z: 40.493114}
+--- !u!1 &6780423224729327234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7170648677172645025}
+  m_Layer: 0
+  m_Name: PopupSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7170648677172645025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780423224729327234}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5000001, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9093331752313929062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7327533407522483955
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,10 @@ public class Customer : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator _anim;
     private GlassContent glassContent; // Contenido del vaso
+    private int finalPrice; // Precio final del cóctel
+    [Header("Popup")]
+    [SerializeField] private GameObject moneyPopupPrefab;
+    [SerializeField] private Transform moneyPopupSpawnPoint;
     void Start()
     {
         spawnPosition = transform.position;
@@ -67,17 +71,18 @@ public class Customer : MonoBehaviour
         switch (result)
         {
             case 0:
+            case 2:
                 Debug.Log("Faltan Ingredientes");
+                finalPrice = 0;
                 break;
             case 1:
                 Debug.Log("Cantidad Incorrecta");
-                GameManager.instance.ClientPay(Mathf.RoundToInt(requestedCocktail.price / 2));
-                break;
-            case 2: Debug.Log("Ingredientes Incorrectos");
+                finalPrice = Mathf.RoundToInt(requestedCocktail.price / 2);
+                GameManager.instance.ClientPay(finalPrice);
                 break;
             case 3:
-                GameManager.instance.ClientPay(requestedCocktail.price);
-                Debug.Log("Coctel Bien Hecho");
+                finalPrice = requestedCocktail.price;
+                GameManager.instance.ClientPay(finalPrice);
                 break;
         }
         if(result == 3)
@@ -98,6 +103,7 @@ public class Customer : MonoBehaviour
     }
     private IEnumerator PlayAnimationAndLeave(string animationTrigger)
     {
+        ShowMoneyPopup();
         cocktailImageUI.gameObject.SetActive(false); // Esconder imagen
         isWaiting = false;
         isLeaving = true;
@@ -138,7 +144,11 @@ public class Customer : MonoBehaviour
         Leave();
     }
 
-
+    private void ShowMoneyPopup()
+    {
+        GameObject popup = Instantiate(moneyPopupPrefab, moneyPopupSpawnPoint.position, Quaternion.identity);
+        popup.GetComponent<MoneyPopup>().Setup(finalPrice);
+    }
     void Leave()
     {
         navMeshAgent.destination = spawnPosition;

@@ -83,37 +83,11 @@ public class ContentUI : MonoBehaviour
 
     }
     private void UpdateSliderColor()
-    {/*
-        // Si hay más de un tipo de líquido, mezclamos los colores
-        if (_ingredients.Count > 0)
-        {
-            // Creamos una lista de colores de los líquidos
-            Color[] colors = new Color[_ingredients.Count];
-            for (int i = 0; i < _ingredients.Count; i++)
-            {
-                colors[i] = _ingredients[i].color;
-            }
-
-            // Si hay múltiples líquidos, calculamos un color promedio
-            Color blendedColor = BlendColors(colors);
-            _sliderFillImage.color = blendedColor;
-        }*/
+    {
         Color mixedColor = GetWeightedColorAverage(_ingredients);
         _sliderFillImage.color = mixedColor;
         _handleImage.color = mixedColor;
     }
-    /*
-    private Color BlendColors(Color[] colors)
-    {
-        // Mezclamos los colores de los líquidos
-        Color blendedColor = Color.black;
-        for (int i = 0; i < colors.Length; i++)
-        {
-            blendedColor += colors[i];
-        }
-
-        return blendedColor / colors.Length; // Promedio de los colores
-    }*/
     private Color GetWeightedColorAverage(List<IngredientData> ingredients)
     {
         if (ingredients.Count == 0) return Color.clear;
