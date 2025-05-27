@@ -56,7 +56,7 @@ public class Customer : MonoBehaviour
         GetComponent<TimerIndicator>().isWaiting = false;
         if (isWaiting && !isLeaving)
         {
-            StartCoroutine(PlayAnimationAndLeave("Sad", false)); // Cliente se va enojado
+            StartCoroutine(PlayAnimationAndLeave("Sad")); // Cliente se va enojado
         }
     }
     public void ReceiveDrink(GlassContent glass)
@@ -83,12 +83,12 @@ public class Customer : MonoBehaviour
         if(result == 3)
         {
             Debug.Log("Cliente satisfecho");
-            StartCoroutine(PlayAnimationAndLeave("Happy", true));
+            StartCoroutine(PlayAnimationAndLeave("Happy"));
         }
         else
         {
             Debug.Log("Cliente insatisfecho");
-            StartCoroutine(PlayAnimationAndLeave("Sad", false));
+            StartCoroutine(PlayAnimationAndLeave("Sad"));
         }
     }
     
@@ -96,7 +96,7 @@ public class Customer : MonoBehaviour
     {
         indexPos = index;
     }
-    private IEnumerator PlayAnimationAndLeave(string animationTrigger, bool happy)
+    private IEnumerator PlayAnimationAndLeave(string animationTrigger)
     {
         cocktailImageUI.gameObject.SetActive(false); // Esconder imagen
         isWaiting = false;
@@ -116,6 +116,7 @@ public class Customer : MonoBehaviour
         if(glassContent != null)
             glassContent.gameObject.SetActive(false); // Desactivar el cóctel
     }
+    
     IEnumerator RotateThenLeave()
     {
         Vector3 direction = (spawnPosition - transform.position).normalized;
