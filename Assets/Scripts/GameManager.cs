@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     [SerializeField] private HUD hud;
     [Header("Puntuacion")]
-    private int playerMoney = 499;
+    private int playerMoney = 0;
     [Header("Tiempo")]
     private float _currentTime = 0;
     [Header("Evaluacion")]
